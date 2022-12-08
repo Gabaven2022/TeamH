@@ -1,0 +1,88 @@
+<ons-page>
+  <ons-toolbar>
+    <ons-toolbar-button class="left" onclick="document.querySelector('#navigator').pushPage('page2.html')">掲示板</ons-toolbar-button>
+    <ons-toolbar-button class="right">シェアリング</ons-toolbar-button>
+  </ons-toolbar>
+  
+  <ons-button onclick="document.querySelector('#navigator').pushPage('page2.html')">Push page</ons-button>
+
+  <ons-tabbar swipeable position="auto">
+    <ons-tab page="KeijibanHome.html" label="ホーム" icon="md-home">
+    </ons-tab>
+    <ons-tab page="KeijibanSearch.html" label="検索" icon="md-search">
+    </ons-tab>
+    <ons-tab page="KeijibanHome.html" label="通知" icon="md-notifications">
+    </ons-tab>
+    <ons-tab page="KeijibanHome.html" label="DM" icon="ion-ios-calendar">
+    </ons-tab>
+    <ons-tab page="KeijibanHome.html" label="アカウント" icon="md-account">
+    </ons-tab>
+  </ons-tabbar>
+</ons-page>
+
+<ons-page>
+  <ons-toolbar>
+    <ons-toolbar-button class="left" page="KeijibanHome.html">掲示板</ons-toolbar-button>
+    <ons-toolbar-button class="right">シェアリング</ons-toolbar-button>
+  </ons-toolbar>
+
+  <ons-tabbar swipeable position="auto">
+    <ons-tab page="KeijibanHome.html" label="ホーム" icon="md-home">
+    </ons-tab>
+    <ons-tab page="KeijibanHome.html" label="通知" icon="md-notifications">
+    </ons-tab>
+    <ons-tab page="KeijibanHome.html" label="アカウント" icon="md-account">
+    </ons-tab>
+  </ons-tabbar>
+</ons-page>
+
+<template id="KeijibanHome.html">
+  <ons-page id="Tab1">
+    <p style="text-align: center;">
+      Twitter風
+    </p>
+  </ons-page>
+</template>
+
+<template id="KeijibanSearch.html">
+  <ons-page id="KeijibanSearch">
+    <p style="text-align: center;">
+      検索画面
+    </p>
+  </ons-page>
+</template>
+
+<template id="KeijibanNotice.html">
+  <ons-page id="KeijibanNotice">
+    <p style="text-align: center;">
+      通知画面
+    </p>
+  </ons-page>
+</template>
+
+<template id="KeijibanDM.html">
+  <ons-page id="KeijibanDM">
+    <p style="text-align: center;">
+      ＤＭ画面
+    </p>
+  </ons-page>
+</template>
+
+<template id="KeijibanAccount.html">
+  <ons-page id="KeijibanAccount">
+    <p style="text-align: center;">
+      アカウント画面
+    </p>
+  </ons-page>
+</template>
+
+
+
+/////////////////
+以下、jsファイル
+
+
+
+document.addEventListener('prechange', function(event) {
+  document.innerHTML = event.tabItem.getAttribute('label');
+});

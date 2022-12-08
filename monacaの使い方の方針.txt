@@ -1,0 +1,17 @@
+monacaとVScodeに合わせて作り直すのはパスの違いなどによってめんどくさい
+→そのため、VScodeで全てhtml,css,javascriptを作った後に、
+monaca内のwww層で右クリックして作ったファイルを全てアップロードすることで、
+面倒な作り直しを省ける。
+
+※このとき、アプリ起動時にどの画面を最初に映すかを再定義しなければならないので、
+以下のリンク先のサイトを参考に定義しなおすことを忘れずに！
+
+https://qiita.com/tsumichan/items/450141fb6bfb82d22010
+
+
+//////////////////
+
+2022/12/2改訂
+
+onsen uiなるもので一からhtmlを組みなおす必要があるらしい
+参考：https://www.youtube.com/watch?v=dHfvNMUxgYE

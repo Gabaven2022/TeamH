@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../common_css/style.css">
+    <link rel="stylesheet" href="Selling.css">
+</head>
+<body>
+        <nav class="TopTab">       
+            <ul class="box 11">
+                <a href="../Keijiban/KeijibanHome.html">掲示板</a>
+            </ul>
+            <ul class="box 12">
+                <a href="SharingHome.html" >教科書シェアリング</a>
+            </ul>  
+        </nav>
+
+
+    <form action="test.html" method="post" enctype="multipart/form-data" >
+
+        <div class="description">教科書の写真を添付して下さい！</div>
+
+        <div class="AddFile">
+            <label class="AddFileButton">
+                <input type="file" name="file">ファイルを選択
+            </label>
+        </div>
+
+        <hr>
+        
+        <!-- ここから学部名プルダウンデザイン -->
+        <div class="description">学部を選んで下さい！</div>
+        <div class="boxes">
+            <input type="checkbox" id="box-1" onclick="chbx(this)">
+            <label for="box-1">教育学部</label>
+          
+            <input type="checkbox" id="box-2" onclick="chbx(this)">
+            <label for="box-2">芸術地域デザイン学部</label>
+          
+            <input type="checkbox" id="box-3" onclick="chbx(this)">
+            <label for="box-3">経済学部</label>
+
+            <input type="checkbox" id="box-4" onclick="chbx(this)">
+            <label for="box-4">理工学部</label>
+
+            <input type="checkbox" id="box-5" onclick="chbx(this)">
+            <label for="box-5">農学部</label>
+          </div>
+
+        <!-- ここまで学部名プルダウンデザイン -->
+
+
+        <div class="cp_iptxt">
+            <label class="ef">
+                <input type="text" placeholder="教科書名">
+            </label>
+        </div>
+        <!-- 参考：https://copypet.jp/692/ -->
+
+        <div class="cp_iptxt">
+            <label class="ef">
+                <textarea placeholder="商品の状態及び特筆事項"></textarea>
+            </label>
+        </div>
+    </form>
+
+    <ul class="underTab">
+        <a href="SharingHome.html"><img src="img/home.png" alt="home" style="display: block; margin: auto;"></a>
+        <a href="SharingAccount.html"><img src="img/account.png" alt="account" style="display: block; margin: auto;"></a>
+        <a href="SharingNotice.html"><img src="img/notice.png" alt="notice" style="display: block; margin: auto;"></a>
+    </ul>
+
+    <script>
+        function chbx(obj) {
+        var that = obj;
+        if (document.getElementById(that.id).checked == true) {
+            document.getElementById("box-1").checked = false;
+            document.getElementById("box-2").checked = false;
+            document.getElementById("box-3").checked = false;
+            document.getElementById(that.id).checked = true;
+        }
+        }
+    </script>
+</body>
+</html>

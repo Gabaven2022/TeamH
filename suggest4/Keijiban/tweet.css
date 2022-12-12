@@ -1,0 +1,43 @@
+main {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.post {
+    padding: 1rem;
+}
+.upperTab {
+    display: flex;
+    justify-content: space-between;
+}
+
+.textBox {
+    flex: 1;
+    display: flex;
+
+}
+
+.side {
+    width: 5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.side .icon img {
+    width: 100%;
+}
+
+
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.text {
+    flex: 1;
+}

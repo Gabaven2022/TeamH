@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+
+.box{
+    height: 4rem;
+    width: 50%;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    color: rgb(106, 6, 6);
+    text-shadow: 2px 2px 1px rgba(0,0,0,0.3);
+    font-weight: bold;
+    background: white;
+    border-top: solid 10px rgb(106, 6, 6);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+.box a {
+    display: block;
+    width: 50%;
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+a {
+    flex: 1;
+}
+
+main {
+    flex: 1; 
+}
+
+.Main {
+    flex: 1;
+}
+
+.memo {
+    text-align: center;
+    
+}
+
+.tweet {
+    position: absolute;
+    bottom: 3rem;
+    right: 1rem;
+    z-index:10000
+}
+
+img.tweet {
+    width: 5rem;
+    height: 5rem;
+}
+
+.underTab {
+    display: flex;
+    height: 4rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-top: solid 4px black;
+    padding-top: 5px;
+    background-color: white;
+}
+
+img {
+    border-top-color : rgba(208, 34, 34, 0.76);
+    height: 100%;
+    background-color: transparent;
+}

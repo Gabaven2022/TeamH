@@ -1,0 +1,118 @@
+/* ここから候補日プルダウンデザイン */
+/*Page styles*/
+.boxes {
+    margin: auto;
+    padding: 25px;
+    color: rgb(106, 6, 6);
+    text-shadow: 2px 2px 1px rgba(0,0,0,0.3);
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  
+  /*Checkboxes styles*/
+  input[type="checkbox"] { display: none; }
+  
+  input[type="checkbox"] + label {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 20px;
+    font: 14px/20px 'Open Sans', Arial, sans-serif;
+    color: black;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+  
+  input[type="checkbox"] + label:last-child { margin-bottom: 0; }
+  
+  input[type="checkbox"] + label:before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(106, 6, 6);
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: .6;
+    -webkit-transition: all .12s, border-color .08s;
+    transition: all .12s, border-color .08s;
+  }
+  
+  input[type="checkbox"]:checked + label:before {
+    width: 10px;
+    top: -5px;
+    left: 5px;
+    border-radius: 0;
+    opacity: 1;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  /* 候補日プルダウンデザイン終わり */
+
+
+
+
+/* ここからボタンのデザイン */
+
+  .float3{
+    position:relative;
+    border-radius: 100vh;
+    color: #fff;
+    font-size: 1rem;
+    text-shadow: 2px 2px 1px rgba(255, 255, 255, 0.445);
+    background: rgb(106, 6, 6);
+    top:0;
+    padding:1rem 4rem;
+    margin: 2rem;
+    display: inline-block;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    outline: none;
+    /*アニメーションの設定*/
+    transition: all .3s;
+  }
+  
+  /*hoverをしたらボックスに影がつき、上に上がる*/
+  .float3:hover {
+    top:-3px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .Nothing {
+    text-align: center;
+    padding: 0;
+  }
+  /* ボタンのデザイン終わり */
+
+
+
+
+/* ここから送信ボタンデザイン */
+  .AddFile {
+    width: 100%;
+    border: 3px solid #ffffff;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .AddFileButton {
+  
+    padding: 2rem 4rem;
+    color: #ffffff;
+    background-color: rgb(106, 6, 6);
+    border-radius: 100vh;
+    cursor: pointer;
+  }
+
+  input[type="submit"] {
+    display: none;
+  }
+  /* 送信ボタンデザイン終わり */

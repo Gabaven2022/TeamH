@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../common_css/style.css">
+    <link rel="stylesheet" href="css/Confirm.css">
+</head>
+<body>
+    <nav>       
+        <ul class="box 11">
+            <a href="../Keijiban/KeijibanHome.html">掲示板</a>
+        </ul>
+        <ul class="box 12">
+            <a href="SharingHome.html" >教科書シェアリング</a>
+        </ul>  
+    </nav>
+    
+   
+
+    
+    <main>
+        <div class="koukoku">広告</div> 
+        
+        <div class="description">
+            教科書を受け取ったか否かを選択してください。売買料金の処理が行われます。
+        </div>
+        <form action="SharingHome.html" method="post" enctype="multipart/form-data">
+            <div class="boxes">
+                <input type="checkbox" id="box-1" onclick="chbx(this)">
+                <label for="box-1">受け取った</label>
+                
+                <input type="checkbox" id="box-2" onclick="chbx(this)">
+                <label for="box-2">受け取らなかった</label>
+            </div>
+
+            <div class="AddFile">
+                <label class="AddFileButton">
+                    <input type="submit" name="file">確定
+                </label>
+            </div>
+        </form>
+    </main>
+    
+
+    <ul class="underTab">
+        <a href="SharingHome.html"><img src="img/home.png" alt="home" style="display: block; margin: auto;"></a>
+        <a href="SharingAccount.html"><img src="img/account.png" alt="account" style="display: block; margin: auto;"></a>
+        <a href="SharingNotice.html"><img src="img/notice.png" alt="notice" style="display: block; margin: auto;"></a>
+    </ul>
+
+    <script>
+        function chbx(obj) {
+        var that = obj;
+        if (document.getElementById(that.id).checked == true) {
+            document.getElementById("box-1").checked = false;
+            document.getElementById("box-2").checked = false;
+            document.getElementById(that.id).checked = true;
+        }
+        }
+    </script>
+</body>
+</html>

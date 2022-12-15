@@ -1,0 +1,183 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.TextbookPicture {
+  display: flex;
+  padding: 0;
+}
+
+
+
+.AddFile {
+  border: 3px solid #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 0rem;
+  height: 10rem;
+}
+
+.LeftPosition {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 2;
+}
+
+.AddFileButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0rem;
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: rgb(106, 6, 6);
+  text-shadow: 2px 2px 1px rgba(0,0,0,0.3);
+  border-radius: 10vh;
+  cursor: pointer;
+}
+
+
+.button2 {
+  height: 100%;
+}
+
+.button3 {
+  width: 80%;
+  height: 3rem;
+}
+
+
+
+input[type="file"] {
+    display: none;
+}
+
+
+input[type="submit"] {
+  display: none;
+}
+
+
+.RemodelPosition {
+  flex: 3;
+  display: flex;
+}
+
+.remodel {
+  width: 15rem;
+  height: 15rem;
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* ここから学部名プルダウンデザイン */
+/*Page styles*/
+.boxes {
+  margin: auto;
+  padding: 25px;
+  color: rgb(106, 6, 6);
+  text-shadow: 2px 2px 1px rgba(0,0,0,0.3);
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/*Checkboxes styles*/
+input[type="checkbox"] { display: none; }
+
+input[type="checkbox"] + label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 20px;
+  font: 14px/20px 'Open Sans', Arial, sans-serif;
+  color: black;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+input[type="checkbox"] + label:last-child { margin-bottom: 0; }
+
+input[type="checkbox"] + label:before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgb(106, 6, 6);
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: .6;
+  -webkit-transition: all .12s, border-color .08s;
+  transition: all .12s, border-color .08s;
+}
+
+input[type="checkbox"]:checked + label:before {
+  width: 10px;
+  top: -5px;
+  left: 5px;
+  border-radius: 0;
+  opacity: 1;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* 学部名プルダウンデザイン終わり */
+
+
+
+
+
+
+
+
+
+.cp_iptxt {
+	position: relative;
+    margin: 3rem;
+}
+.cp_iptxt input[type='text'] {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.3em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	color: black;
+	border: none;
+	border-bottom: 2px solid #1b2538;
+	background: transparent;
+}
+.ef input[type='text']:focus {
+	border-bottom: 2px solid rgb(106, 6, 6);
+	outline: none;
+}
+
+.cp_iptxt textarea {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.3em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	color: black;
+	border: none;
+	border-bottom: 2px solid #1b2538;
+	background: transparent;
+}
+.ef textarea:focus {
+	border-bottom: 2px solid rgb(106, 6, 6);
+	outline: none;
+}

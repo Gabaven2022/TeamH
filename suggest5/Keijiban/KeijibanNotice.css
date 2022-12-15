@@ -1,0 +1,29 @@
+.NoticeBox{
+    height: 4rem;
+    display: flex;
+    padding: 0.5em 1em;
+    margin: 2em;
+    color: rgb(106, 6, 6);
+    text-shadow: 2px 2px 1px rgba(0,0,0,0.3);
+    font-weight: bold;
+    background: white;
+    border-top: solid 10px rgb(106, 6, 6);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    
+}
+.box a {
+    display: block;
+    width: 50%;
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    
+}
+
+a {
+    flex: 1;
+    text-decoration: none;
+    color : inherit;
+}

@@ -1,0 +1,17 @@
+.pictures {
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: space-around; 
+}
+
+ul {
+    height: 10rem;
+    width: 10rem;
+    margin: 0.5rem;
+    box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
+    margin-right: 0.5rem;
+}
+
+.underTab {
+    margin: initial;
+}

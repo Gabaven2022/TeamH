@@ -1,0 +1,16 @@
+
+.message{
+    display: flex ;
+    border-style: solid;
+    border-width: thin;
+    margin-top: 3rem;
+}
+
+.namedate{
+    display: flex;
+    justify-content: space-between;
+}
+
+.picture img{
+    width: 8rem;
+}

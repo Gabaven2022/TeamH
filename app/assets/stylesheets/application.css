@@ -1,15 +1,469 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
+ * require_tree .
  *= require_self
  */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+
+.box {
+  height: 4rem;
+  width: 50%;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  color: rgb(106, 6, 6);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  background: white;
+  border-top: solid 10px rgb(106, 6, 6);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+
+.box a {
+  display: block;
+  width: 50%;
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+
+a {
+  flex: 1;
+}
+
+main {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.memo {
+  text-align: center;
+
+}
+
+.tweet {
+  position: fixed;
+  bottom: 6rem;
+  right: 2rem;
+  z-index: 10000;
+  width: 5rem;
+  height: auto;
+}
+
+img.tweet {
+  width: 5rem;
+  height: 5rem;
+}
+
+.underTab {
+  display: flex;
+  height: 4rem;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-top: solid 4px black;
+  padding-top: 5px;
+  background-color: white;
+}
+
+.underTab a img {
+  display: block;
+  margin: auto;
+}
+
+
+img {
+  border-top-color: rgba(208, 34, 34, 0.76);
+  height: 100%;
+  background-color: transparent;
+}
+
+.koukoku {
+  height: 130px;
+  background-color: rgb(248, 248, 84);
+}
+
+.description {
+  text-align: center;
+  margin: 1rem;
+  color: rgb(106, 6, 6);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+}
+
+.UpperTab {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem;
+}
+
+
+.files {
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+.AddFile {
+  width: 100%;
+  border: 3px solid #ffffff;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.CancelPlace {
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+
+.AddFileButton {
+
+  width: 9rem;
+  height: 2rem;
+  color: #ffffff;
+  background-color: rgb(106, 6, 6);
+  border-radius: 100vh;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  text-shadow: 2px 2px 1px black;
+}
+
+
+
+
+
+input[type="submit"] {
+  display: none;
+}
+
+input[type="button"] {
+  display: none;
+}
+
+.cp_iptxt textarea {
+  font: 15px/24px sans-serif;
+  box-sizing: border-box;
+  margin: 0.5rem;
+  width: 100%;
+  padding: 0.3em;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  color: black;
+  border: 2px solid #1b2538;
+  background: transparent;
+}
+
+.ef textarea:focus {
+  border: 2px solid rgb(106, 6, 6);
+  outline: none;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.toukou {
+  margin: 1rem;
+}
+
+.cancel {
+  margin: 2rem;
+}
+
+
+.AccountPicture {
+  box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
+}
+
+.description {
+  margin: 2rem;
+}
+
+.SearchBox {
+  display: flex;
+  justify-content: center;
+  margin: 4rem;
+}
+
+.search_container {
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid #999;
+  padding: 3px 10px;
+  border-radius: 20px;
+  height: 2.3em;
+  width: 30rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.search_container input[type="text"] {
+  border: none;
+  height: 2.0em;
+}
+
+.search_container input[type="text"]:focus {
+  outline: 0;
+}
+
+.search_container input[type="submit"] {
+  cursor: pointer;
+  font-family: FontAwesome;
+  font-size: 1.3em;
+  border: none;
+  background: none;
+  color: #3879D9;
+  position: absolute;
+  width: 2.5em;
+  height: 2.5em;
+  right: 0;
+  top: -10px;
+  outline: none;
+}
+
+.NoticeBox {
+  height: 4rem;
+  display: flex;
+  padding: 0.5em 1em;
+  margin: 2em;
+  color: rgb(106, 6, 6);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  background: white;
+  border-top: solid 10px rgb(106, 6, 6);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+
+}
+
+.box a {
+  display: block;
+  width: 50%;
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+
+}
+
+a {
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+}
+
+.fundamentals {
+  padding: 0.5rem;
+  display: flex;
+}
+
+.left,
+.right {
+  display: flex;
+  justify-content: center;
+}
+
+.left {
+  flex: 1;
+}
+
+.right {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.AccountPicture {
+  height: 10rem;
+  width: 10rem;
+  box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
+  ;
+  margin-right: 0.5rem;
+}
+
+.FacutyAndName {
+  display: flex;
+  flex-direction: column;
+}
+
+.Faculty,
+.Name {
+  box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
+  ;
+}
+
+.Points {
+  margin-top: 1rem;
+
+}
+
+.PossessPoints {
+  margin: 0.5rem;
+}
+
+
+.float3 {
+  position: relative;
+  border-radius: 100vh;
+  color: #fff;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 1px rgba(255, 255, 255, 0.445);
+  background: rgb(106, 6, 6);
+  top: 0;
+  padding: 10px 20px;
+  margin: 2rem;
+  display: inline-block;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  outline: none;
+  /*アニメーションの設定*/
+  transition: all .3s;
+}
+
+/*hoverをしたらボックスに影がつき、上に上がる*/
+.float3:hover {
+  top: -3px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.ToChange {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 0;
+}
+
+.AccountPicture {
+  display: flex;
+  padding: 0;
+  height: 15rem;
+}
+
+
+
+.AddFile {
+  border: 3px solid #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 0rem;
+}
+
+.button1 {
+  height: 5rem;
+  width: 10rem;
+}
+
+.button2 {
+  height: 100%;
+}
+
+.button3 {
+  width: 80%;
+  height: 3rem;
+}
+
+
+.LeftPosition {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 2;
+  padding: 0;
+}
+
+.AddFileButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0rem;
+  padding: 0.3rem 0.5rem;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: rgb(106, 6, 6);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 10vh;
+  cursor: pointer;
+}
+
+.RemodelPosition {
+  flex: 3;
+  display: flex;
+  box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
+
+}
+
+.remodel {
+  width: 15rem;
+  height: 15rem;
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+input[type="file"] {
+  display: none;
+}
+
+
+input[type="submit"] {
+  display: none;
+}
+
+.cp_iptxt {
+  position: relative;
+  margin: 3rem;
+}
+
+.cp_iptxt input[type='text'] {
+  font: 15px/24px sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.3em;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  color: black;
+  border: none;
+  border-bottom: 2px solid #1b2538;
+  background: transparent;
+}
+
+.ef input[type='text']:focus {
+  border-bottom: 2px solid rgb(106, 6, 6);
+  outline: none;
+}
+
+.peofile-image {
+  width: 100%;
+  object-fit: cover;
+}

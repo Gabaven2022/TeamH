@@ -1,0 +1,58 @@
+<% if @post.errors.any? %>
+  <div class="notification is-danger">
+    <h2>
+      <%= pluralize(@post.errors.count, "error" ) %> prohibited this object from being saved: not successfully
+    </h2>
+    <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li>
+          <%= message %>
+        </li>
+        <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+
+    <main>
+      <%= form_for @post do |f| %>
+
+        <div class="UpperTab">
+          <div class="AccountPicture">
+            <% if current_user.profile_image? %>
+              <%= image_tag current_user.profile_image.url, class: "app-profile-image" %>
+            <%end%>
+          </div>
+        </div>
+
+        <div class="cp_iptxt">
+          <label class="ef">
+            <%= f.text_area :body, rows:'9',placeholder: '投稿する内容を打ってください！' %>
+          </label>
+        </div>
+
+          <div class="files">
+            <div>
+              <label class="AddFile AddFileButton picture" accept="image/*">
+              "写真を選択"
+              <%= f.file_field :image, class: "input" %>
+              <%= f.hidden_field :image_cache, class: "input" %>
+              </label>
+            </div>
+          </div>
+        <div style="display:flex;width:50%; margin:auto">
+          <div class="AddFile ToukouPlace">
+            <label class="AddFileButton toukou">
+            <%= f.submit '投稿' , class: "button is-success" %>
+            "投稿"
+            </label>
+          </div>
+          <div class="AddFile CancelPlace">
+            <label class="AddFileButton cancel">
+              <input type="button" onClick="history.back()">キャンセル
+            </label>
+          </div>
+        </div>
+            <% end %>
+
+    </main>

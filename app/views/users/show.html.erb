@@ -1,0 +1,42 @@
+<main>
+
+  <div class="fundamentals">
+    <div class="left">
+      <div class="AccountPicture">
+        <% if @user.profile_image? %>
+          <%= image_tag @user.profile_image.url, class: "peofile-image" %>
+            <% end %>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="description FacultyAndName">
+        学部<div class="Faculty">
+          <%= @user.faculty %>
+        </div>
+        氏名<div class="Name">
+          <%= @user.username %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="Points description">
+    <div>現在の保有ポイント数</div>
+    <div class="PossessPoints">
+      <% @user.point %>P
+    </div>
+  </div>
+
+
+
+  <ul class="ToChange">
+    <%= link_to edit_user_path, class: "float3" do %>
+      変更する
+      <% end %>
+  </ul>
+
+  <ul class="tweet">
+    <a href="KeijibanTweet.html"><img src="img/tweet.png" alt="tweet" class="tweet"></a>
+  </ul>
+</main>

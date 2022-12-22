@@ -1,0 +1,29 @@
+
+/* .message{
+    display: flex ;
+    border-style: solid;
+    border-width: thin;
+    margin-top: 3rem;
+}
+
+.namedate{
+    display: flex;
+    justify-content: space-between;
+}
+
+.picture img{
+    width: 8rem;
+} */
+
+
+.DMContent1 {
+    display: flex;
+}
+
+.OtherPicture {
+    flex: 1;
+}
+
+.NameDateMessage {
+    flex: 5;
+}

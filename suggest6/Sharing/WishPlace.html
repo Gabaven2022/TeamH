@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../common_css/style.css">
+    <link rel="stylesheet" href="css/WishPlace.css">
+</head>
+<body>
+    <nav class="TopTab">       
+        <ul class="box 11">
+            <a href="../Keijiban/KeijibanHome.html">掲示板</a>
+        </ul>
+        <ul class="box 12">
+            <a href="SharingHome.html" >教科書シェアリング</a>
+        </ul>  
+    </nav>
+
+    <main>
+
+        <div class="description attention">受け取る場所：佐賀大学図書館前広場</div>
+
+        <form action="SharingHome.html" method="post" enctype="multipart/form-data">
+
+            <div class="candidates">
+
+                <div class="cp_iptxt candidate1">
+                    <label class="ef">
+                        <input type="text" placeholder="候補１　〇月〇日〇〇時〇〇分">
+                    </label>
+                </div>
+    
+                <div class="cp_iptxt candidate2">
+                    <label class="ef">
+                        <input type="text" placeholder="候補２　〇月〇日〇〇時〇〇分">
+                    </label>
+                </div>
+    
+                <div class="cp_iptxt candidate3">
+                    <label class="ef">
+                        <input type="text" placeholder="候補３　〇月〇日〇〇時〇〇分">
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="description">
+                教科書を受け取りたい３つの希望日時を記入して送信してください。日程調整を行います。
+            </div>
+
+            <div class="AddFile">
+                <label class="AddFileButton">
+                    <input type="submit" name="file">確定
+                </label>
+            </div>
+        </form>
+        
+    </main>
+
+    <ul class="underTab">
+        <a href="SharingHome.html"><img src="img/home.png" alt="home" style="display: block; margin: auto;"></a>
+        <a href="SharingAccount.html"><img src="img/account.png" alt="account" style="display: block; margin: auto;"></a>
+        <a href="SharingNotice.html"><img src="img/notice.png" alt="notice" style="display: block; margin: auto;"></a>
+    </ul>
+</body>
+</html>

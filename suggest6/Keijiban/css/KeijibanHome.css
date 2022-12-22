@@ -1,0 +1,54 @@
+.toukou {
+    box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
+    margin: 1rem;
+}
+
+.upper{
+    display: flex;
+    height: 55px;
+    box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
+}
+
+.homeicon img{
+    width: 50px;
+    height: 50px;
+
+}
+
+.namae{
+    padding: 15px;
+}
+
+.center{
+   text-align: center;
+}
+
+.upload {
+    box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
+    padding: 1rem;
+}
+
+.upload img{
+width: 200px;
+}
+
+.under{
+    box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
+}
+
+.bunnsyou{
+    padding: 1rem;
+ font-size: 15px;
+ box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
+}
+
+.heart img{
+width: 40px;
+}
+
+.heart {
+    box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
+    padding: 0.3rem;
+    display: flex;
+    align-items: center;
+}

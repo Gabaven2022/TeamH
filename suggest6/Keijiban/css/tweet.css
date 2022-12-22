@@ -1,0 +1,100 @@
+.UpperTab {
+    display: flex;
+}
+
+
+.files {
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+.AddFile {
+    border: 3px solid #ffffff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+
+
+  .CancelPlace {
+    display: flex;
+    justify-content: flex-start;
+    
+  }
+
+  
+  
+  .AddFileButton {
+    height: 2rem;
+    color: #ffffff;
+    background-color: rgb(106, 6, 6);
+    border-radius: 100vh;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    text-shadow: 2px 2px 1px black;
+  }
+  
+
+
+
+
+  input[type="submit"] {
+    display: none;
+  }
+
+  input[type="button"] {
+    display: none;
+  }
+
+.cp_iptxt {
+  margin: 0.5rem;
+}
+
+  .cp_iptxt textarea {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.3em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	color: black;
+	border: 2px solid #1b2538;
+	background: transparent;
+}
+.ef textarea:focus {
+	border: 2px solid rgb(106, 6, 6);
+	outline: none;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.toukou {
+    margin: 0.5rem;
+    width: 90%;
+}
+
+.ToukouPlace {
+  flex: 1;
+}
+
+.cancel {
+    margin: 0.5rem;
+    width: 10rem;
+}
+
+
+.AccountPicture {
+  box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
+  width: 10rem;
+  height: 10rem;
+  margin: 1rem;
+  flex: 1;
+}
+

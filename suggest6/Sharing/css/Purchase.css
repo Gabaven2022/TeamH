@@ -1,0 +1,45 @@
+.float3{
+    position:relative;
+    border-radius: 100vh;
+    color: #fff;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 1px rgba(255, 255, 255, 0.445);
+    background: rgb(106, 6, 6);
+    top:0;
+    padding:10px 20px;
+    margin: 2rem;
+    display: inline-block;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    outline: none;
+    /*アニメーションの設定*/
+    transition: all .3s;
+  }
+  
+  /*hoverをしたらボックスに影がつき、上に上がる*/
+  .float3:hover {
+    top:-3px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .DemandPurchase {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 4rem;
+  }
+
+
+  .text {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 2rem;
+  }
+  .MerchandisePrice {
+    font-size: 2.5rem;
+  }
+
+  .Fee {
+    font-size: 2.5rem;
+  }

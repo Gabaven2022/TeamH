@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../common_css/style.css">
+    <link rel="stylesheet" href="css/tweet.css">
+</head>
+<body>
+    <nav class="TopTab">       
+        <ul class="box 11">
+            <a href="KeijibanHome.html">掲示板</a>
+        </ul>
+        <ul class="box 12">
+            <a href="../Sharing/SharingHome.html" >教科書シェアリング</a>
+        </ul>  
+    </nav>
+    
+    <main>
+        <form  action="KeijibanHome.html" method="post" enctype="multipart/form-data">  
+            <div class="AddFile CancelPlace">
+                <label class="AddFileButton cancel">
+                    <input type="button" onClick="history.back()">キャンセル
+                </label>
+            </div>
+
+            <div class="UpperTab">
+                <div class="AccountPicture">
+                    ここにサーバーに保存してあるアカウント写真を挿入
+                </div>
+
+                <div class="AddFile ToukouPlace">
+                    <label class="AddFileButton toukou">
+                        <input type="submit" name="file">投稿
+                    </label>
+                </div>
+            </div>          
+            
+
+            <div class="cp_iptxt">
+                <label class="ef">
+                    <textarea rows="9" placeholder="投稿する内容を打ってください！"></textarea>
+                </label>
+            </div>
+
+            <div class="files">
+                <div>
+                    <label class="AddFile AddFileButton picture" accept="image/*">
+                        <input type="file" name="file">写真を選択
+                    </label>
+                </div>
+    
+                <div>
+                    <label class="AddFile AddFileButton movie">
+                        <input type="file" name="file" accept="video/*">動画を選択
+                    </label>
+                </div>
+            </div>    
+            <!-- 写真と動画の挿入する場所はまだ考慮できてないから、その辺は清川さんに聞こうかな         -->
+            <!-- 写真も動画もテキストエリアの下側に張り付けられたらいい感じになりそう -->
+            <!-- divタグclass="RemodelPosition"で写真の場所を定義して、textarea内に挿入しようとしても上手くいかない -->
+        </form>
+    </main>
+
+    <ul class="underTab">
+        <a href="KeijibanHome.html"><img src="img/home.png" alt="home" style="display: block; margin: auto;"></a>
+        <a href="KeijibanSearch.html"><img src="img/search.png" alt="search" style="display: block; margin: auto;"></a>
+        <a href="KeijibanNotice.html"><img src="img/notice.png" alt="notice" style="display: block; margin: auto;"></a>
+        <a href="KeijibanDM.html"><img src="img/DM.png" alt="DM" style="display: block; margin: auto;"></a>
+        <a href="KeijibanAccount.html"><img src="img/account.png" alt="account" style="display: block; margin: auto;"></a>
+    </ul>
+</body>
+</html>

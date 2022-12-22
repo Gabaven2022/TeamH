@@ -1,0 +1,16 @@
+.pictures {
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: space-around; 
+}
+
+.item {
+    height: 10rem;
+    width: 10rem;
+    margin: 0.5rem;
+    box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
+    margin-right: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

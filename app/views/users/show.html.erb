@@ -24,7 +24,7 @@
   <div class="Points description">
     <div>現在の保有ポイント数</div>
     <div class="PossessPoints">
-      <% @user.point %>P
+      <%= @user.point %>P
     </div>
   </div>
 
@@ -34,9 +34,5 @@
     <%= link_to edit_user_path, class: "float3" do %>
       変更する
       <% end %>
-  </ul>
-
-  <ul class="tweet">
-    <a href="KeijibanTweet.html"><img src="img/tweet.png" alt="tweet" class="tweet"></a>
   </ul>
 </main>

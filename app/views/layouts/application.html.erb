@@ -57,7 +57,7 @@
                       <%= link_to "新規登録" , new_user_registration_path, class: "button is-warning is-light" %>
                   </nav>
 
-                  <% end %>
+                <% end %>
             </div>
             <ul class="underTab">
               <%= link_to posts_path do %>
@@ -69,9 +69,9 @@
                     <a href="KeijibanNotice.html">
                       <%= image_tag 'img/notice.png' , alt: 'notice' %>
                     </a>
-                    <a href="KeijibanDM.html">
+                    <%= link_to rooms_path do %>
                       <%= image_tag 'img/DM.png' , alt: 'display' %>
-                    </a>
+                    <% end %>
                     <% if user_signed_in? %>
                       <%= link_to user_path(current_user) do%>
                         <%=image_tag 'img/account.png' , alt: 'account' %>

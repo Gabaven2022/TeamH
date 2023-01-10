@@ -302,7 +302,7 @@ a {
   flex-direction: column;
 }
 
-.AccountPicture {
+.AccountPicture-post {
   height: 10rem;
   width: 10rem;
   box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
@@ -466,4 +466,63 @@ input[type="submit"] {
 .peofile-image {
   width: 100%;
   object-fit: cover;
+}
+
+/* KeizibanHome */
+.upper {
+  display: flex;
+  height: 55px;
+  box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
+}
+
+.homeicon img {
+  width: 50px;
+  height: 50px;
+
+}
+
+.namae {
+  padding: 15px;
+}
+
+.center {
+  text-align: center;
+}
+
+.upload {
+  box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
+  padding: 1rem;
+}
+
+.upload img {
+  width: 200px;
+}
+
+.under {
+  box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
+  margin-bottom: 60px;
+}
+
+.bunnsyou {
+  padding: 1px 1rem;
+  font-size: 15px;
+  box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
+}
+
+.heart img {
+  width: 30px;
+}
+
+.heart {
+  box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+}
+
+.post-time {
+  text-align: center;
+  font-family: system-ui;
+  color: #9b9b9b;
+  margin: auto 10px auto auto;
 }

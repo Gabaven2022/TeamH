@@ -1,12 +1,60 @@
 <main>
   <div class="koukoku">広告</div>
 
-  Twitter風
+  <div class="toukou">
+  <% @posts.each do |post| %>
+    <div class="upper">
+      <div class="homeicon">
+        <% if post.user.profile_image? %>
+        <%= image_tag post.user.profile_image.url, class: " " %>
+        <% end %>
+      </div>
+
+      <div class="namae">
+        <%= post.user.username%>
+      </div>
+      <div class="post-time"><%= post.created_at.strftime('%Y/%m/%d %H:%M')%></div>
+    </div>
+
+    <% if post.image? %>
+      <div class="center">
+        <div class="upload">
+          <%= image_tag post.image.url, class: " " %>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="under">
+      <div class="bunnsyou">
+        <h7><%= simple_format(post.body) %></h7>
+      </div>
+      <ul class="heart">
+        <%= link_to posts_path do %>
+          <%= image_tag 'img/heart.png', class: " ",alt: "ハート" %>
+        <% end %>
+        <div class="toggle-btn">
+          <%= link_to posts_path do %>
+            <%= image_tag 'img/comment.png', class: " ",alt: "コメント" %>
+          <% end %>
+        </div>
+        <div class="toggle-comment">
+          <%= form_for @post do |f| %>
+            <%= f.label :body, class: 'ef' %>
+            <%= f.text_area :body, rows:'9',placeholder: '投稿する内容を打ってください！' %>
+
+          <% end %>
+        </div>
+      </ul>
+    </div>
+    <% end %>
+  </div>
+
+
 
 
   <ul class="tweet">
     <%= link_to new_post_path do %>
       <%= image_tag 'img/tweet.png' , alt: 'tweet' , class: 'tweet' %>
-        <% end %>
+    <% end %>
   </ul>
 </main>

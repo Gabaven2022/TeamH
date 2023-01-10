@@ -18,7 +18,7 @@
       <%= form_for @post do |f| %>
 
         <div class="UpperTab">
-          <div class="AccountPicture">
+          <div class="AccountPicture-post">
             <% if current_user.profile_image? %>
               <%= image_tag current_user.profile_image.url, class: "app-profile-image" %>
             <%end%>
@@ -26,7 +26,7 @@
         </div>
 
         <div class="cp_iptxt">
-          <label class="ef">
+          <%= f.label :body, class: 'ef' %>
             <%= f.text_area :body, rows:'9',placeholder: '投稿する内容を打ってください！' %>
           </label>
         </div>

@@ -3,6 +3,5 @@ class Post < ApplicationRecord
   belongs_to :user
   with_options presence: true do
     validates :body, presence: true
-    validates :image, presence: true
   end
 end

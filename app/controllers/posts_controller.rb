@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @post = Post.all
+    @posts = Post.all
   end
   def new
     @post = Post.new
@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to post_path(@post), notice: "投稿完了"
+      redirect_to posts_path, notice: "投稿完了"
     else
       render :new, alert: "失敗"
     end

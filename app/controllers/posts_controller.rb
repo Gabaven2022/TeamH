@@ -1,10 +1,18 @@
 class PostsController < ApplicationController
+
   def index
     @posts = Post.all
+    @comment = Comment.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
+
   def new
     @post = Post.new
   end
+
   def create
     @post = Post.new(post_params)
     if @post.save
@@ -12,8 +20,8 @@ class PostsController < ApplicationController
     else
       render :new, alert: "失敗"
     end
-
   end
+
   def show
 
   end

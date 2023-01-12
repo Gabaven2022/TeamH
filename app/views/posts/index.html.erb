@@ -10,7 +10,7 @@
         <% end %>
       </div>
 
-      <div class="namae">
+      <div class="name">
         <%= post.user.username%>
       </div>
       <div class="post-time"><%= post.created_at.strftime('%Y/%m/%d %H:%M')%></div>
@@ -26,25 +26,30 @@
 
     <div class="under">
       <div class="bunnsyou">
-        <h7><%= simple_format(post.body) %></h7>
+        <p><%= simple_format(post.body) %></p>
       </div>
       <ul class="heart">
         <%= link_to posts_path do %>
           <%= image_tag 'img/heart.png', class: " ",alt: "ハート" %>
         <% end %>
-        <div class="toggle-btn">
-          <%= link_to posts_path do %>
-            <%= image_tag 'img/comment.png', class: " ",alt: "コメント" %>
-          <% end %>
-        </div>
-        <div class="toggle-comment">
-          <%= form_for @post do |f| %>
-            <%= f.label :body, class: 'ef' %>
-            <%= f.text_area :body, rows:'9',placeholder: '投稿する内容を打ってください！' %>
-
-          <% end %>
+        <div class="toggleButton">
+          <%= image_tag 'img/comment.png', class: "",alt: "コメント" %>
         </div>
       </ul>
+
+      <%= render "comments", post: post %>
+
+      <div class="toggle-comment">
+        <%= form_for @comment do |f| %>
+        <%= render 'layouts/error_messages', model: f.object %>
+          <%= f.text_area :body, rows:'5', style: 'width: 95%;', placeholder: '投稿する内容を打ってください！' %>
+          <%= f.hidden_field :post_id, :value=> post.id %>
+          <label class="comment-btn">
+            <%= f.submit %>確定
+          </label>
+
+        <% end %>
+      </div>
     </div>
     <% end %>
   </div>
@@ -58,3 +63,8 @@
     <% end %>
   </ul>
 </main>
+<script>
+$(".toggleButton").on("click",function(){
+	$(this).next().slideToggle(500)
+})
+</script>

@@ -1,0 +1,13 @@
+      <% post.comments.each do |comment| %>
+      <div class="comment-frame">
+          <% if post.user.profile_image? %>
+            <%= image_tag comment.user.profile_image.url, class: "comment-img" %>
+          <% end %>
+        <div class="user-name">
+          <%= comment.user.username%>
+        </div>
+        <div class="comment-text">
+            <%= comment.body %>
+        </div>
+      </div>
+      <% end %>

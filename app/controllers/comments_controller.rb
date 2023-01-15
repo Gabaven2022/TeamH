@@ -1,9 +1,14 @@
 class CommentsController < ApplicationController
+
   def create
     @comment = current_user.comments.new(comment_params)
     respond_to do |format|
-      format.html { redirect_to posts_path }
-      format.js
+      if @comment.save
+        format.html { redirect_to posts_path }
+        format.js
+      else
+        format.js { render :errors}
+      end
     end
   end
   def destroy

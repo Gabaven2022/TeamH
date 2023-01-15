@@ -192,6 +192,8 @@ input[type="file"] {
 
 .toukou {
   margin: 1rem;
+  max-width: 800px;
+  margin: auto;
 }
 
 .cancel {
@@ -528,9 +530,17 @@ input[type="submit"] {
   margin: auto 10px auto auto;
 }
 
+.comment-time {
+  text-align: center;
+  font-family: system-ui;
+  color: #9b9b9b;
+  margin: auto 10px auto auto;
+  font-size: 13px;
+}
+
 .toggleButton {
   flex: 1;
-  position: relative;
+  display: flex;
 }
 
 .toggleButton.down:before {
@@ -565,7 +575,7 @@ input[type="submit"] {
 
 .comment-frame {
   box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
-  padding: 0.3rem 0.3rem 0.3rem 0.7rem;
+  padding: 0.3rem 0.3rem 0.3rem 2.7rem;
   display: flex;
   align-items: center;
 }
@@ -585,4 +595,97 @@ input[type="submit"] {
   font-weight: bold;
   color: #5f5f5f;
   font-style: italic;
+  margin-right: 30px;
+}
+
+.comment-height {
+  margin-bottom: 42px;
+}
+
+.comment-list {
+  margin-bottom: 10px;
+  max-height: 340px;
+}
+
+@media screen and (max-width:480px) {
+  .comment-list {
+    overflow: auto;
+  }
+}
+
+@media screen and (min-width:481px) {
+  .comment-list {
+    overflow: hidden;
+  }
+}
+
+.comment-list::-webkit-scrollbar {
+  overflow: hidden;
+  width: 5px;
+  background: #eee;
+
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.comment-list::-webkit-scrollbar:horizontal {
+  height: 5px;
+}
+
+.comment-list::-webkit-scrollbar-button {
+  display: none;
+}
+
+.comment-list::-webkit-scrollbar-piece {
+  background: #eee;
+}
+
+.comment-list::-webkit-scrollbar-piece:start {
+  background: #eee;
+}
+
+.comment-list::-webkit-scrollbar-thumb {
+  overflow: hidden;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+
+  background: #333;
+}
+
+.comment-list::-webkit-scrollbar-corner {
+  overflow: hidden;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+
+  background: #333;
+}
+
+.on-scroll:hover {
+  overflow: auto;
+}
+
+.comment-create {
+  display: flex;
+}
+
+.comment-under img {
+  height: 2rem;
+  width: 2rem;
+
+}
+
+.comment-under {}
+
+.comment-form {
+  display: flex;
+  margin: 0 15px 0 auto;
+  justify-content: right;
+}
+
+.comment-form .comment-input {
+  border: none;
+  outline: none;
+  height: 2rem;
+  width: 85%;
+  margin-left: 7px;
 }

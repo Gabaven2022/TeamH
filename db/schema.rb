@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_10_133607) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_16_152240) do
   create_table "comments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "body"
     t.bigint "user_id", null: false
@@ -55,6 +55,29 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_10_133607) do
     t.index ["user_id"], name: "index_rooms_on_user_id"
   end
 
+  create_table "text_dates", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "date1"
+    t.string "date2"
+    t.string "date3"
+    t.bigint "user_id", null: false
+    t.bigint "text_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["text_id"], name: "index_text_dates_on_text_id"
+    t.index ["user_id"], name: "index_text_dates_on_user_id"
+  end
+
+  create_table "texts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "text_name", null: false
+    t.string "body"
+    t.integer "faculty", null: false
+    t.string "text_image", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_texts_on_user_id"
+  end
+
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -78,4 +101,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_10_133607) do
   add_foreign_key "messages", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "rooms", "users"
+  add_foreign_key "text_dates", "texts"
+  add_foreign_key "text_dates", "users"
+  add_foreign_key "texts", "users"
 end

@@ -1,0 +1,27 @@
+  <main>
+      <div class="koukoku">広告</div>
+
+      <div class="pictures">
+        <div class="text-list">
+        <% @texts.each do |text| %>
+          <div class="text-container">
+            <%= link_to text_path(text) do %>
+                <ul class="text-image-container">
+                <%= image_tag text.text_image.url, class: "text-image" %>
+                </ul>
+            <div class="text-name">
+                <%= text.text_name%>
+            </div>
+              <% end %>
+
+          </div>
+            <% end %>
+        </div>
+      </div>
+
+  <ul class="tweet">
+    <%= link_to new_text_path do %>
+      <%= image_tag 'img/tweet.png' , alt: 'tweet' , class: 'tweet' %>
+    <% end %>
+  </ul>
+  </main>

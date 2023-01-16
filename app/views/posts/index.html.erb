@@ -61,11 +61,13 @@
       </div>
     </div>
     <% end %>
-  </div>
-
-  <ul class="tweet">
+    <ul class="tweet">
     <%= link_to new_post_path do %>
       <%= image_tag 'img/tweet.png' , alt: 'tweet' , class: 'tweet' %>
     <% end %>
   </ul>
+    <div class="pagenate-container">
+      <%= paginate @posts %>
+    </div>
+  </div>
 </main>

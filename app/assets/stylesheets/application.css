@@ -64,12 +64,24 @@ main {
 }
 
 .tweet {
-  position: fixed;
+  position: sticky;
   bottom: 6rem;
   right: 2rem;
+  margin-left: auto;
   z-index: 10000;
   width: 5rem;
   height: auto;
+}
+
+@media screen and (max-width:480px) {
+  .tweet {
+    position: fixed;
+    bottom: 6rem;
+    right: 2rem;
+    z-index: 10000;
+    width: 5rem;
+    height: auto;
+  }
 }
 
 img.tweet {
@@ -193,6 +205,7 @@ input[type="file"] {
 .toukou {
   margin: 1rem;
   max-width: 800px;
+  min-height: 80%;
   margin: auto;
 }
 
@@ -200,6 +213,8 @@ input[type="file"] {
   margin: 2rem;
 }
 
+
+.pictures {}
 
 .AccountPicture {
   box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
@@ -425,11 +440,16 @@ a {
 
 .remodel {
   width: 15rem;
-  height: 15rem;
   flex: 3;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.remodel img {
+  max-width: 80vh;
+  max-height: 170px;
+  margin-bottom: 10px;
 }
 
 
@@ -674,8 +694,6 @@ input[type="submit"] {
 
 }
 
-.comment-under {}
-
 .comment-form {
   display: flex;
   margin: 0 15px 0 auto;
@@ -688,4 +706,455 @@ input[type="submit"] {
   height: 2rem;
   width: 85%;
   margin-left: 7px;
+}
+
+
+/* SOLD */
+
+.pagenate-container {
+  position: relative;
+  text-align: center;
+  height: 50px;
+}
+
+.pagination {
+  display: block;
+  position: relative;
+}
+
+.pagination .first {
+  display: none;
+}
+
+.pagination .last {
+  display: none;
+}
+
+.pagination .prev {
+  position: absolute;
+  left: 5%;
+  padding: 5px 10px;
+  background: #fff;
+  border: solid 2px #111;
+  font-size: 14px;
+  color: #111;
+  font-weight: bold;
+  transition: all 0.15s linear;
+}
+
+.pagination .next {
+  position: absolute;
+  right: 5%;
+  background: #fff;
+  border: solid 2px #111;
+  font-size: 14px;
+  color: #111;
+  font-weight: bold;
+  transition: all 0.15s linear;
+}
+
+.pagination .next a {
+  padding: 5px 10px;
+}
+
+.page {
+  margin: 0 5px;
+}
+
+.page {
+  margin: 0 5px;
+}
+
+.page a {
+  padding: 5px 10px;
+  border-radius: 50%;
+  background: #fff;
+  border: solid 2px #111;
+  font-size: 14px;
+  color: #111;
+  font-weight: bold;
+  transition: all 0.15s linear;
+}
+
+.current {
+  padding: 5px 10px;
+  border-radius: 50%;
+  border: solid 2px #111;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.15s linear;
+  background: #111;
+  color: #fff;
+  pointer-events: none;
+}
+
+.text-book-picture {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.ToPurchase {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.AddFile {
+  border: 3px solid #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 0rem;
+  height: 7rem;
+}
+
+.LeftPosition {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 2;
+}
+
+.AddFileButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0rem;
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: rgb(106, 6, 6);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 8vh;
+  cursor: pointer;
+}
+
+
+.button2 {
+  height: 100%;
+}
+
+.button3 {
+  width: 80%;
+  height: 3rem;
+}
+
+
+
+input[type="file"] {
+  display: none;
+}
+
+
+input[type="submit"] {
+  display: none;
+}
+
+
+
+/* ここから学部名プルダウンデザイン */
+/*Page styles*/
+.boxes {
+  margin: auto;
+  padding: 25px;
+  color: rgb(106, 6, 6);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/*Checkboxes styles*/
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]+label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 20px;
+  font: 14px/20px 'Open Sans', Arial, sans-serif;
+  color: black;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+input[type="checkbox"]+label:last-child {
+  margin-bottom: 0;
+}
+
+input[type="checkbox"]+label:before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgb(106, 6, 6);
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: .6;
+  -webkit-transition: all .12s, border-color .08s;
+  transition: all .12s, border-color .08s;
+}
+
+input[type="checkbox"]:checked+label:before {
+  width: 10px;
+  top: -5px;
+  left: 5px;
+  border-radius: 0;
+  opacity: 1;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* 学部名プルダウンデザイン終わり */
+
+
+
+
+
+
+
+
+
+.cp_iptxt {
+  position: relative;
+  margin: 3rem;
+}
+
+.cp_iptxt input[type='text'] {
+  font: 15px/24px sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.3em;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  color: black;
+  border: none;
+  border-bottom: 2px solid #1b2538;
+  background: transparent;
+}
+
+.ef input[type='text']:focus {
+  border-bottom: 2px solid rgb(106, 6, 6);
+  outline: none;
+}
+
+.cp_iptxt textarea {
+  font: 15px/24px sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.3em;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  color: black;
+  border: none;
+  border-bottom: 2px solid #1b2538;
+  background: transparent;
+}
+
+.ef textarea:focus {
+  border-bottom: 2px solid rgb(106, 6, 6);
+  outline: none;
+}
+
+.text-list {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: flex-start;
+}
+
+.text-container {
+  position: relative;
+  border: solid 1px rgb(75, 75, 75);
+}
+
+.text-image {
+  border-bottom: solid 1px rgb(75, 75, 75);
+}
+
+.text-name {
+  text-align: center;
+
+}
+
+@media screen and (max-width:480px) {
+
+  .text-image {
+    height: 120px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .show-text-image {
+    max-height: 100vh;
+    width: 80vw;
+    object-fit: cover;
+  }
+
+  .text-container {
+    width: 30%;
+  }
+}
+
+@media screen and (min-width:481px) {
+  .text-image {
+    height: 200px;
+    width: 170px;
+    object-fit: cover;
+  }
+
+  .text-container {
+    margin: 10px 20px;
+  }
+
+  .show-text-image {
+    max-height: 100vh;
+    max-width: 80%;
+    object-fit: cover;
+  }
+}
+
+.text-book-container {
+  margin: auto;
+  max-width: 600px;
+}
+
+
+
+/* sharing home */
+.float3 {
+  position: relative;
+  border-radius: 100vh;
+  color: #fff;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 1px rgba(255, 255, 255, 0.445);
+  background: rgb(106, 6, 6);
+  top: 0;
+  padding: 10px 20px;
+  margin: 2rem;
+  display: inline-block;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  outline: none;
+  /*アニメーションの設定*/
+  transition: all .3s;
+}
+
+/*hoverをしたらボックスに影がつき、上に上がる*/
+.float3:hover {
+  top: -3px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+
+/*========= レイアウトのためのCSS ===============*/
+
+
+.BuyingSelling {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+/* faculty */
+
+/* .koukokuはcommon_cssに移動させたよ！！ */
+
+
+.yohaku {
+  padding: 25px;
+  background-color: white;
+}
+
+.font {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+
+}
+
+.kyouiku {
+  display: table;
+  width: 100%;
+  height: 70px;
+
+}
+
+.tideza {
+  display: table;
+  width: 100%;
+  height: 70px;
+}
+
+.keizai {
+  display: table;
+  width: 100%;
+  height: 70px;
+}
+
+.rikou {
+  display: table;
+  width: 100%;
+  height: 70px;
+}
+
+.nougaku {
+  display: table;
+  width: 100%;
+  height: 70px;
+}
+
+
+.button019 a {
+  background: rgb(106, 6, 6);
+  text-decoration: none;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  border-radius: 3px;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 280px;
+  padding: 10px 25px;
+  color: white;
+  transition: 0.3s ease-in-out;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.button019 a:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  right: 2rem;
+  font-size: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: right 0.3s;
+  width: 6px;
+  height: 6px;
+  border-top: solid 2px currentColor;
+  border-right: solid 2px currentColor;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.button019 a:hover {
+  background: rgb(106, 6, 6);
+  color: white;
+}
+
+.button019 a:hover:after {
+  right: 1.4rem;
 }

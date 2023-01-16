@@ -1,8 +1,6 @@
 //= require jquery
-//= require jquery_ujs
-import jquery from "jquery"
-window.$ = jquery
-var sethover = []
+//= require rails-ujs
+var sethover = [];
 
 $(function () {
   $(".toggleButton").on("click", function () {
@@ -17,5 +15,9 @@ $(function () {
     $('.comment-list').removeClass('on-scroll');
     clearTimeout(sethover);
   });
-
-})
+  if ($('.toukou').innerHeight() < 500 || $('.text-list').innerHeight() < 500) {
+    $('.tweet').css('position', 'fixed');
+  } else {
+    $('.tweet').css('position', 'sticky');
+  };
+});

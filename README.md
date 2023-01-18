@@ -17,8 +17,6 @@
 
 1. `git clone [git@github.com:Gabaven2022/TeamH.git] .`<br><br>
 
-1. `git pull nakao`<br><br>
-
 1. `sudo apt upgrade`<br><br>
 
 1. `docker-compose build`<br><br>

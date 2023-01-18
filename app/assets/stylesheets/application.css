@@ -10,6 +10,9 @@ body {
   min-height: 100vh;
 }
 
+.TopTab {
+  z-index: 100;
+}
 
 ul {
   margin: 0;

@@ -1,0 +1,14 @@
+      <% post.comments.each do |comment| %>
+      <div class='comment-frame'>
+          <% if comment.user.profile_image? %>
+            <%= image_tag comment.user.profile_image.url, class: 'comment-img' %>
+          <% end %>
+        <div class='user-name'>
+          <%= comment.user.username%>
+        </div>
+        <div class='comment-tex'>
+            <%= comment.body %>
+        </div>
+        <div class="post-time comment-time"><%= time_ago_in_words(comment.created_at)+"前"%></div>
+      </div>
+      <% end %>

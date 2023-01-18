@@ -1,0 +1,23 @@
+<main>
+  <div class="text-book-container">
+    <div class="TextBookInformation">
+        <div class ="text-book-picture">
+          <%= image_tag @text.text_image.url, class: "show-text-image" %>
+        </div>
+        <div class ="TextBookName description">
+            教科書名
+            <br>
+            <%= @text.text_name %>
+        </div>
+        <div class ="TextBookbody description">
+            詳細
+            <br>
+            <%= simple_format(@text.body) %>
+        </div>
+    </div>
+
+    <ul class="ToPurchase">
+        <%= link_to '購入手続きへ', place_text_path(@text), class: "float3 botton" %>
+    </ul>
+  </div>
+</main>

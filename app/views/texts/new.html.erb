@@ -1,0 +1,101 @@
+<main>
+  <div class="Sell">
+    <%= form_for @text do |f| %>
+      <div class="description">教科書の写真を添付して下さい！</div>
+
+      <div class="TextbookPicture">
+          <div class="LeftPosition">
+              <div class="AddFile">
+                  <label class="AddFileButton TextbookPicture">
+                      <div class="select">
+                        <%= f.file_field :text_image, id: "input myImage", onchange: "setImage(this);", onclick: "this.value ='';" %>写真選択はこちら！
+                      </div>
+                  </label>
+              </div>
+          </div>
+
+
+          <div class="RemodelPosition">
+              <div class="remodel">
+                  <img id="preview">
+              </div>
+          </div>
+      </div>
+
+      <hr>
+
+      <!-- ここから学部名プルダウンデザイン -->
+      <div class="description">学部を選んで下さい！</div>
+      <div class="boxes">
+        <%= f.radio_button :faculty, '1' %>
+
+        教育学部</label>
+
+        <%= f.radio_button :faculty, '2' %>
+
+        芸術地域デザイン学部</label>
+
+        <%= f.radio_button :faculty, '3' %>
+        経済学部</label>
+
+        <%= f.radio_button :faculty, '4' %>
+        理工学部</label>
+
+        <%= f.radio_button :faculty, '5' %>
+        農学部</label>
+      </div>
+
+      <!-- ここまで学部名プルダウンデザイン -->
+
+      <div class="description">教科書の名前とその状態を書いてください！</div>
+      <!-- descriptionのcssはcommon_cssにあるよ！ -->
+
+      <div class="cp_iptxt">
+        <label class="ef">
+            <%= f.text_field :text_name, placeholder: "教科書名" %>
+          </label>
+      </div>
+      <!-- 参考：https://copypet.jp/692/ -->
+
+      <div class="cp_iptxt">
+          <label class="ef">
+                <%= f.text_area :body, rows:'5',placeholder: '商品の状態及び特筆事項' %>
+          </label>
+      </div>
+
+      <div class="AddFile button2">
+          <label class="AddFileButton button3">
+            <%= f.submit '確定'%>
+            確定
+          </label>
+      </div>
+    <% end %>
+  </main>
+</div>
+<script>
+    function chbx(obj) {
+    var that = obj;
+    if (document.getElementById(that.id).checked == true) {
+        document.getElementById("box-1").checked = false;
+        document.getElementById("box-2").checked = false;
+        document.getElementById("box-3").checked = false;
+        document.getElementById("box-4").checked = false;
+        document.getElementById("box-5").checked = false;
+        document.getElementById(that.id).checked = true;
+    }
+    }
+
+    function setImage(target) {
+        const img = document.getElementById("preview");
+        img.style.border = 'solid 1px rgb(120, 120, 120)';
+
+        img.style.MarginBottom = '100px';/*margin-bottom*/
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            document.getElementById("preview").setAttribute('src', e.target.result);
+        }
+        reader.readAsDataURL(target.files[0]);
+    };
+
+
+</script>

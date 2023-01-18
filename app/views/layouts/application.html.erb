@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TesmH</title>
+  <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+        integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />
+
+      <%= stylesheet_link_tag "application" , media: "all" %>
+      <%= javascript_include_tag "application" %>
+
+      <%= javascript_importmap_tags %>
+      <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <% if flash[:notice] %>
+    <div class="notification is-info">
+      <p class="notice">
+        <%= notice %>
+      </p>
+    </div>
+    <% end %>
+      <% if flash[:alert] %>
+        <div class="notification is-danger">
+          <p class="alert">
+            <%= alert %>
+          </p>
+        </div>
+        <% end %>
+
+          <nav class="TopTab">
+            <ul class="box 11">
+              <%= link_to '掲示板' , posts_path %>
+            </ul>
+            <ul class="box 12">
+              <%= link_to '教科書シェアリング', home_texts_path %>
+            </ul>
+          </nav>
+
+          <%= yield %>
+            <div style="position:absolute;botom:30px;">
+              <% if user_signed_in? %>
+                <nav>
+                  <%= link_to "ログアウト" , destroy_user_session_path, method: :delete, class: "button is-warning is-light"
+                    %>
+                </nav>
+
+                <% else %>
+                  <nav>
+                    <%= link_to "ログイン" , new_user_session_path, class: "button is-warning is-light" %>
+                      <%= link_to "新規登録" , new_user_registration_path, class: "button is-warning is-light" %>
+                  </nav>
+
+                <% end %>
+            </div>
+            <ul class="underTab">
+              <%= link_to posts_path do %>
+                <%= image_tag 'img/home.png' , alt: 'home' %>
+                  <% end %>
+                    <a href="KeijibanSearch.html">
+                      <%= image_tag 'img/search.png' , alt: 'seach' %>
+                    </a>
+                    <a href="KeijibanNotice.html">
+                      <%= image_tag 'img/notice.png' , alt: 'notice' %>
+                    </a>
+                    <%= link_to rooms_path do %>
+                      <%= image_tag 'img/DM.png' , alt: 'display' %>
+                    <% end %>
+                    <% if user_signed_in? %>
+                      <%= link_to user_path(current_user) do%>
+                        <%=image_tag 'img/account.png' , alt: 'account' %>
+                          <% end %>
+                            <% end %>
+            </ul>
+</body>
+
+</html>

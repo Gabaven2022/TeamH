@@ -1,0 +1,41 @@
+<main>
+
+    <div class="description attention">受け取る場所：佐賀大学図書館前広場</div>
+
+        <%= form_with model: @text_date, url: place_create_text_path, method: :post,local: 'false' do |f| %>
+
+        <div class="candidates">
+
+            <div class="cp_iptxt candidate1">
+
+                <label class="ef">
+                    <%= f.text_field :date1, placeholder: "候補１　〇月〇日〇〇時〇〇分" %>
+                </label>
+            </div>
+
+            <div class="cp_iptxt candidate2">
+                <label class="ef">
+                    <%= f.text_field :date2, placeholder: "候補2 〇月〇日〇〇時〇〇分" %>
+                </label>
+            </div>
+
+            <div class="cp_iptxt candidate3">
+                <label class="ef">
+                    <%= f.text_field :date3, placeholder: "候補3 〇月〇日〇〇時〇〇分" %>
+                </label>
+            </div>
+
+        </div>
+
+        <div class="description">
+            教科書を受け取りたい３つの希望日時を記入して送信してください。日程調整を行います。
+        </div>
+        <%= f.hidden_field :text_id, :value=> @text_id %>
+        <div class="AddFile">
+            <label class="AddFileButton">
+                <%= f.submit %>確定
+            </label>
+        </div>
+
+      <% end %>
+</main>

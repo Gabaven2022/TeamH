@@ -1,0 +1,7 @@
+$('#comment-height-<%= @comment.post_id%>').append('<div class="comment-frame"><% if @comment.user.profile_image? %><%= image_tag @comment.user.profile_image.url, class: "comment-img" %><% end %><div class="user-name"><%= @comment.user.username%></div><div class="comment-tex"><%= @comment.body %></div><div class="post-time comment-time"><%= time_ago_in_words(@comment.created_at)+"前" %></div></div>');
+$('#comment-input-<%=@comment.post_id%>')[0].reset();
+$('#post-<%= @comment.post_id%>').delay(100).animate({
+  scrollTop: $('#comment-height-<%= @comment.post_id%>').outerHeight(true)
+},300);
+var thisCount = $('#post-count-<%=@comment.post_id %>').html();
+$('#post-count-<%=@comment.post_id %>').html(Number(thisCount)+1);

@@ -4,6 +4,7 @@ class CreateTexts < ActiveRecord::Migration[7.0]
       t.string :text_name, null: false
       t.string :body
       t.integer :faculty, null: false
+      t.integer :state, null: false, default: 0
       t.string :text_image, null: false
       t.references :user,null: false, foreign_key: true
       t.timestamps

@@ -59,6 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_16_152240) do
     t.string "date1"
     t.string "date2"
     t.string "date3"
+    t.integer "buyer_id", null: false
     t.bigint "user_id", null: false
     t.bigint "text_id", null: false
     t.datetime "created_at", null: false
@@ -71,6 +72,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_16_152240) do
     t.string "text_name", null: false
     t.string "body"
     t.integer "faculty", null: false
+    t.integer "state", default: 0, null: false
     t.string "text_image", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false

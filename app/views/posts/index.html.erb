@@ -48,7 +48,11 @@
         </div>
         <div class="comment-under">
           <%= form_with model: @comment, class: 'comment-form', id: "comment-input-#{post.id}", local: false do |f| %>
-          <%= image_tag current_user.profile_image.url, class: " " %>
+          <% if user_signed_in?%>
+            <%if current_user.profile_image? %>
+              <%= image_tag current_user.profile_image.url, class: " " %>
+            <% end %>
+          <% end %>
           <%= render 'layouts/error_messages', model: f.object %>
             <%= f.text_field :body, class: 'comment-input', placeholder: 'コメントする' %>
             <%= f.hidden_field :post_id, :value=> post.id %>

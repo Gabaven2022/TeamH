@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
-  get 'texts/index'
-  get 'texts/create'
-  devise_for :users, controllers: { registrations: 'users/registrations' }
+  devise_for :users, controllers: {
+        sessions: 'users/sessions',
+        registrations: 'users/registrations'},
+    path_names: {
+      sign_in: 'sign_in',
+      sign_out: 'sign_out',
+      sign_up: 'sign_up'
+    }
   resources :users do
     member do
       get :follows, :followers
+      get 'edit_image'
+      patch 'add_image'
     end
     resource :relationships, only: [:create, :destroy]
   end
@@ -17,6 +24,7 @@ Rails.application.routes.draw do
     member do
       get 'place'
       get 'text_index'
+      get 'text_buy'
       post 'place_create'
     end
     collection do

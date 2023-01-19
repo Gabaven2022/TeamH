@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :texts, dependent: :destroy
-  has_many :text_dates, dependent: :destroy
+  has_many :bought_products, class_name: "text_dates",foreign_key: "buyer_id"
 
   def follow(user_id)
     follower.create(followed_id: user_id)

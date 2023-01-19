@@ -13,45 +13,55 @@
   </div>
   <% end %>
 
-    <main>
-      <%= form_for @user do |f| %>
-        <div class="description">アカウントの写真を添付して下さい！</div>
+<main>
+  <%= form_for @user do |f| %>
+    <div class="description">アカウントの写真を添付して下さい！</div>
 
-        <div class="AccountPicture">
-          <div class="LeftPosition">
-            <div class="AddFile button1">
-              <label class="AddFileButton">
-                <div class="select">
-                  <%= f.file_field :profile_image,id: "myImage" , class: "input, hide-input" %>写真を選択
-                </div>
-              </label>
+    <div class="AccountPicture">
+      <div class="LeftPosition">
+        <div class="AddFile button1 border-none", style="border:none;">
+          <label class="AddFileButton">
+            <div class="select">
+              <%= f.file_field :profile_image,id: "myImage", onchange: "setImage(this);", onclick: "this.value = '';",class: "input, hide-input" %>写真を選択
             </div>
-          </div>
-
-
-          <div class="RemodelPosition">
-            <div class="remodel">
-              <img id="preview">
-            </div>
-          </div>
-        </div>
-
-        <div class="cp_iptxt">
-          <label class="ef">
-            <%= f.text_field :faculty, class: "input input-faculity-field" , placeholder: "学部を入力してください。" %>
           </label>
         </div>
+      </div>
 
-        <div class="cp_iptxt">
-          <label class="ef">
-            <%= f.text_field :username, class: "input input-faculity-field" , placeholder: "氏名を入力してください。" %>
-          </label>
-        </div>
 
-        <div class="AddFile button2">
-          <label class="AddFileButton button3">
-            <%= f.submit %>確定
-          </label>
+      <div class="RemodelPosition">
+        <div class="remodel">
+          <img id="preview">
         </div>
-        <% end %>
-    </main>
+      </div>
+    </div>
+
+    <div class="cp_iptxt">
+      <label class="ef">
+        <%= f.text_field :faculty, class: "input input-faculity-field" , placeholder: "学部を入力してください。" %>
+      </label>
+    </div>
+
+    <div class="cp_iptxt">
+      <label class="ef">
+        <%= f.text_field :username, class: "input input-faculity-field" , placeholder: "氏名を入力してください。" %>
+      </label>
+    </div>
+
+    <div class="AddFile button2">
+      <label class="AddFileButton button3">
+        <%= f.submit %>確定
+      </label>
+    </div>
+    <% end %>
+</main>
+<script>
+  function setImage(target) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+          document.getElementById("preview").setAttribute('src', e.target.result);
+      }
+      reader.readAsDataURL(target.files[0]);
+  };
+
+</script>

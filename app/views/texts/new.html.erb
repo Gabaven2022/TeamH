@@ -5,10 +5,10 @@
 
       <div class="TextbookPicture">
           <div class="LeftPosition">
-              <div class="AddFile">
-                  <label class="AddFileButton TextbookPicture">
+              <div class="AddFile2">
+                  <label class="AddFile2Button TextbookPicture">
                       <div class="select">
-                        <%= f.file_field :text_image, id: "input myImage", onchange: "setImage(this);", onclick: "this.value ='';" %>写真選択はこちら！
+                        <%= f.file_field :text_image, id: "input myImage", onchange: "setImage(this);", required: true, onclick: "this.value ='';" %>写真選択はこちら！
                       </div>
                   </label>
               </div>
@@ -28,21 +28,20 @@
       <div class="description">学部を選んで下さい！</div>
       <div class="boxes">
         <%= f.radio_button :faculty, '1' %>
-
-        教育学部</label>
+        <%= f.label :faculty_1, "教育学部" %>
 
         <%= f.radio_button :faculty, '2' %>
-
-        芸術地域デザイン学部</label>
+        <%= f.label :faculty_2, "芸術地域デザイン学部" %>
 
         <%= f.radio_button :faculty, '3' %>
-        経済学部</label>
+        <%= f.label :faculty_3, "経済学部" %>
 
         <%= f.radio_button :faculty, '4' %>
-        理工学部</label>
+        <%= f.label :faculty_4, "理工学部" %>
 
         <%= f.radio_button :faculty, '5' %>
-        農学部</label>
+        <%= f.label :faculty_5, "農学部" %>
+
       </div>
 
       <!-- ここまで学部名プルダウンデザイン -->
@@ -73,17 +72,6 @@
   </main>
 </div>
 <script>
-    function chbx(obj) {
-    var that = obj;
-    if (document.getElementById(that.id).checked == true) {
-        document.getElementById("box-1").checked = false;
-        document.getElementById("box-2").checked = false;
-        document.getElementById("box-3").checked = false;
-        document.getElementById("box-4").checked = false;
-        document.getElementById("box-5").checked = false;
-        document.getElementById(that.id).checked = true;
-    }
-    }
 
     function setImage(target) {
         const img = document.getElementById("preview");

@@ -339,6 +339,7 @@ a {
 .Name {
   box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
   ;
+  padding: 5px;
 }
 
 .Points {
@@ -803,7 +804,7 @@ input[type="submit"] {
   margin-top: 4rem;
 }
 
-.AddFile {
+.AddFile2 {
   border: 3px solid #ffffff;
   display: flex;
   justify-content: center;
@@ -816,9 +817,10 @@ input[type="submit"] {
   align-items: center;
   justify-content: center;
   flex: 2;
+  position: relative;
 }
 
-.AddFileButton {
+.AddFile2Button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -869,11 +871,11 @@ input[type="submit"] {
 }
 
 /*Checkboxes styles*/
-input[type="checkbox"] {
+input[type="radio"] {
   display: none;
 }
 
-input[type="checkbox"]+label {
+input[type="radio"]+label {
   display: block;
   position: relative;
   padding-left: 35px;
@@ -886,11 +888,11 @@ input[type="checkbox"]+label {
   -ms-user-select: none;
 }
 
-input[type="checkbox"]+label:last-child {
+input[type="radio"]+label:last-child {
   margin-bottom: 0;
 }
 
-input[type="checkbox"]+label:before {
+input[type="radio"]+label:before {
   content: '';
   display: block;
   width: 20px;
@@ -904,7 +906,7 @@ input[type="checkbox"]+label:before {
   transition: all .12s, border-color .08s;
 }
 
-input[type="checkbox"]:checked+label:before {
+input[type="radio"]:checked+label:before {
   width: 10px;
   top: -5px;
   left: 5px;
@@ -1160,4 +1162,26 @@ input[type="checkbox"]:checked+label:before {
 
 .button019 a:hover:after {
   right: 1.4rem;
+}
+
+.pointer-none {
+  pointer-events: none;
+}
+
+.pointer-none::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+}
+
+.pointer-none::after {
+  width: 100%;
+  height: 100%;
+  content: "販売済み";
+  color: white;
+  text-align: center;
+  position: absolute;
+  top: 50%;
 }

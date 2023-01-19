@@ -1,4 +1,5 @@
 class TextsController < ApplicationController
+  before_action :authenticate_user!
   def home
 
   end
@@ -30,6 +31,21 @@ class TextsController < ApplicationController
   def place
     @text_date = TextDate.new
     @text_id = params[:id]
+  end
+
+  def text_buy
+    @text = Text.find(params[:id])
+    if @text.state != 1
+      @buy = TextDate.create(buyer_id: current_user.id, user_id: @text.user_id, text_id: params[:id])
+      if @buy.save
+        @text.update(state: 1)
+        redirect_to place_text_path(@text)
+      else
+        redirect_to text_path(params[:id])
+      end
+    else
+      redirect_to text_path(params[:id])
+    end
   end
 
   def place_create

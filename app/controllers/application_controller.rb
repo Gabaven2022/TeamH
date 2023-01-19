@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :authenticate_user!, :configure_permitted_parameters, if: :devise_controller?
 
   protected
 
@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_up_path_for(resource)
-    user_path(current_user)
+    edit_image_user_path(current_user)
   end
 
   def configure_permitted_parameters
@@ -16,6 +16,6 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_out_path_for(resource_or_scope)
-    posts_path
+    new_user_session_path
   end
 end

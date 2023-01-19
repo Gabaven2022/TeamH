@@ -72,6 +72,7 @@ group :test do
   gem "webdrivers"
 end
 gem 'devise'
+gem 'devise-i18n'
 gem 'carrierwave', '~> 1.3', '>= 1.3.1'
 gem 'mini_magick'
 gem 'kaminari'

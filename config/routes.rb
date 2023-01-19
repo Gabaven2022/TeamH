@@ -1,12 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
         sessions: 'users/sessions',
-        registrations: 'users/registrations'},
-    path_names: {
-      sign_in: 'sign_in',
-      sign_out: 'sign_out',
-      sign_up: 'sign_up'
-    }
+        registrations: 'users/registrations'}
   resources :users do
     member do
       get :follows, :followers
@@ -16,7 +11,9 @@ Rails.application.routes.draw do
     resource :relationships, only: [:create, :destroy]
   end
   root to: "posts#index"
-  resources :posts
+  resources :posts do
+    resources :likes
+  end
   resources :messages
   resources :rooms
   resources :comments

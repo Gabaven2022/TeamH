@@ -4,8 +4,13 @@ var sethover = [];
 
 $(function () {
   $(".toggleButton").on("click", function () {
-    $(this).parents(".under").find(".toggle-comment").toggle(300);
-    $(this).parents('.under').find(".comment-input").focus();
+    var $target = $(this).parents(".under").find(".toggle-comment");
+    if ($target.is(':hidden')) {
+      $target.slideToggle(300);
+      $(this).parents('.under').find(".comment-input").focus();
+    } else {
+      $target.slideToggle(300);
+    }
   });
   $('.comment-list').hover(function () {
     sethover = setTimeout(function () {

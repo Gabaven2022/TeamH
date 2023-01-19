@@ -14,6 +14,8 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :texts, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :liked_posts, through: :likes, source: :post
   has_many :bought_products, class_name: "text_dates",foreign_key: "buyer_id"
 
   def follow(user_id)
@@ -28,5 +30,9 @@ class User < ApplicationRecord
   # フォローしていればtrueを返す
   def following?(user)
     following_user.include?(user)
+  end
+
+  def liked_by?(post_id)
+    likes.where(post_id: post_id).exists?
   end
 end

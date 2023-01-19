@@ -32,6 +32,9 @@
         <%= link_to posts_path do %>
           <%= image_tag 'img/heart.png', class: " ",alt: "ハート" %>
         <% end %>
+        <div id = "like_<%= post.id %>">
+          <%= render partial: "like", locals: { post: post } %>
+        </div>
         <div class="toggleButton">
           <%= image_tag 'img/comment.png', class: "",alt: "コメント" %>
           <div class="comment-count"><span id="post-count-<%=post.id%>"><%= post.comments.count %></span></div>
@@ -75,3 +78,8 @@
     </div>
   </div>
 </main>
+
+<script>
+
+
+</script>

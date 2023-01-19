@@ -21,7 +21,7 @@
 
 1. `docker-compose build`<br><br>
 
-1. `docker-compose run web_a rails db:create`<br><br>
+1. `docker-compose run web_a rails db:create db:migrate`<br><br>
 
 1. `docker-compose up`<br><br>
 

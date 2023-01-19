@@ -2,6 +2,7 @@
  * require_tree .
  *= require_self
  */
+
 body {
   margin: 0;
   padding: 0;
@@ -1184,4 +1185,20 @@ input[type="radio"]:checked+label:before {
   text-align: center;
   position: absolute;
   top: 50%;
+}
+
+/* like */
+.like-link {
+  text-decoration: none;
+  background-image: ;
+}
+
+.like-btn {
+  font-size: 1em;
+  color: #808080;
+}
+
+.unlike-btn {
+  font-size: 1em;
+  color: #e54747;
 }

@@ -119,6 +119,8 @@ img {
 .koukoku {
   height: 130px;
   text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .description {
@@ -129,11 +131,18 @@ img {
   font-weight: bold;
 }
 
-.UpperTab {
+.TweetUpper {
   display: flex;
   justify-content: space-between;
+}
+
+.UpperTab {
+  display: flex;
+  justify-content: center;
   margin: 0.5rem;
 }
+
+
 
 
 .files {
@@ -147,6 +156,13 @@ img {
   border: 3px solid #ffffff;
   display: flex;
   justify-content: flex-end;
+}
+
+.AddFileForCancel {
+  width: 100%;
+  border: 3px solid #ffffff;
+  display: flex;
+  margin: 2rem;
 }
 
 .CancelPlace {
@@ -170,6 +186,9 @@ img {
   font-size: 1rem;
   text-shadow: 2px 2px 1px black;
 }
+
+
+
 
 
 
@@ -214,6 +233,8 @@ input[type="file"] {
 
 .cancel {
   margin: 2rem;
+  display: flex;
+  justify-content: flex-start;
 }
 
 
@@ -324,7 +345,6 @@ a {
 
 .AccountPicture-post {
   height: 10rem;
-  width: 10rem;
   box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
   ;
   margin-right: 0.5rem;
@@ -960,7 +980,7 @@ input[type="radio"]:checked+label:before {
   letter-spacing: 1px;
   color: black;
   border: none;
-  border-bottom: 2px solid #1b2538;
+  border: 2px solid #1b2538;
   background: transparent;
 }
 

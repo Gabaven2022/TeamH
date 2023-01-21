@@ -29,10 +29,7 @@
         <p><%= simple_format(post.body) %></p>
       </div>
       <ul class="heart">
-        <%= link_to posts_path do %>
-          <%= image_tag 'img/heart.png', class: " ",alt: "ハート" %>
-        <% end %>
-        <div id = "like_<%= post.id %>">
+        <div class="heart-btn", id = "like_<%= post.id %>">
           <%= render partial: "like", locals: { post: post } %>
         </div>
         <div class="toggleButton">
@@ -79,7 +76,8 @@
   </div>
 </main>
 
-<script>
-
-
-</script>
+<style>
+html {
+  overflow-y: scroll;
+}
+</style>

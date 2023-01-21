@@ -6,10 +6,10 @@ $(function () {
   $(".toggleButton").on("click", function () {
     var $target = $(this).parents(".under").find(".toggle-comment");
     if ($target.is(':hidden')) {
-      $target.slideToggle(300);
+      $target.toggle(300);
       $(this).parents('.under').find(".comment-input").focus();
     } else {
-      $target.slideToggle(300);
+      $target.toggle(300);
     }
   });
   $('.comment-list').hover(function () {
@@ -25,4 +25,15 @@ $(function () {
   } else {
     $('.tweet').css('position', 'sticky');
   };
+
+  $.error = function (str) {
+    $("div").text(str);
+  };
+  $("button").click(function () {
+    $.parseJSON("JSONではありません");
+  });
+  $(".notification-wrapper").animate({ opacity: 1, height: 50 }, 1000);
+  setTimeout(function () {
+    $(".notification-wrapper").fadeOut(500);
+  }, 3000)
 });

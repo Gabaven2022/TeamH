@@ -27,7 +27,7 @@
       <!-- ここから学部名プルダウンデザイン -->
       <div class="description">学部を選んで下さい！</div>
       <div class="boxes">
-        <%= f.radio_button :faculty, '1' %>
+        <%= f.radio_button :faculty, '1',required: true %>
         <%= f.label :faculty_1, "教育学部" %>
 
         <%= f.radio_button :faculty, '2' %>
@@ -51,20 +51,23 @@
 
       <div class="cp_iptxt">
         <label class="ef">
-            <%= f.text_field :text_name, placeholder: "教科書名" %>
+            <%= f.text_field :text_name, placeholder: "教科書名",required: true %>
           </label>
       </div>
       <!-- 参考：https://copypet.jp/692/ -->
 
       <div class="cp_iptxt">
           <label class="ef">
-                <%= f.text_area :body, rows:'5',placeholder: '商品の状態及び特筆事項' %>
+                <%= f.text_area :body, rows:'5',placeholder: '商品の状態及び特筆事項',required: true %>
           </label>
       </div>
 
       <div class="AddFile button2">
+        <label class="AddFileButton button3" style="margin-right:10px;">
+            <input type="button" onClick="history.back()">キャンセル
+        </label>
           <label class="AddFileButton button3">
-            <%= f.submit '確定'%>
+            <%= f.submit id: "submit"%>
             確定
           </label>
       </div>
@@ -83,6 +86,12 @@
             document.getElementById("preview").setAttribute('src', e.target.result);
         }
         reader.readAsDataURL(target.files[0]);
+        $('#submit').on('click', function(){
+            if($('#myImage').val().length()==0){
+                $("body").html('<div class="notification-wrapper"><div class="notification is-danger"><div class="alert">画像を挿入してください</div></div></div>');
+            }
+        })
+
     };
 
 

@@ -11,6 +11,35 @@ body {
   min-height: 100vh;
 }
 
+.notification-wrapper {
+  position: fixed;
+  top: 78px;
+  width: 100%;
+  text-align: center;
+  opacity: 0
+}
+
+.notification-wrapper .notification {
+  width: 80%;
+  margin: auto;
+}
+
+.alert {
+  background-color: #ff5d5d;
+  color: white;
+  padding: 10px 4px;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+.notice {
+  background-color: #6292ff;
+  color: white;
+  padding: 10px 4px;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
 .TopTab {
   z-index: 100;
 }
@@ -208,7 +237,7 @@ input[type="file"] {
 
 .toukou {
   margin: 1rem;
-  max-width: 800px;
+  max-width: 700px;
   min-height: 80%;
   margin: auto;
 }
@@ -343,9 +372,26 @@ a {
   padding: 5px;
 }
 
+.point-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.point-buy {
+  position: absolute;
+  font-size: 20px;
+  right: -60px;
+  top: 10px;
+  background-color: #e3aa55;
+  color: #ffffff;
+  padding: 5px 11px;
+  border-radius: 10px;
+  text-shadow: none;
+}
+
 .Points {
   margin-top: 1rem;
-
+  position: relative;
 }
 
 .PossessPoints {
@@ -742,7 +788,6 @@ input[type="submit"] {
   background: #fff;
   border: solid 2px #111;
   font-size: 14px;
-  color: #111;
   font-weight: bold;
   transition: all 0.15s linear;
 }
@@ -1188,9 +1233,12 @@ input[type="radio"]:checked+label:before {
 }
 
 /* like */
-.like-link {
-  text-decoration: none;
-  background-image: ;
+.un-liked {
+  color: #818181;
+}
+
+.liked {
+  color: #ff4343;
 }
 
 .like-btn {
@@ -1201,4 +1249,53 @@ input[type="radio"]:checked+label:before {
 .unlike-btn {
   font-size: 1em;
   color: #e54747;
+}
+
+.heart-btn {
+  flex: 1;
+}
+
+.heart-btn i {
+  font-size: 20px;
+}
+
+
+/* image */
+.main-middle {
+  max-width: 550px;
+  margin: 5rem auto;
+  width: 100%;
+}
+
+.image-item {
+  display: block;
+  position: relative;
+  height: 200px;
+  width: 200px;
+  margin: auto;
+  box-shadow: 0px 0px 0px 2px rgb(86 80 80 / 60%);
+  background: url('/images/img/add_photo.svg') center center / cover no-repeat;
+  cursor: pointer;
+}
+
+.image-item::before {
+  position: absolute;
+  content: "+ タップして変更";
+  bottom: 0;
+  right: 16px;
+  border-radius: 10px;
+  padding: 0px 18px;
+  background: #7c7c7c;
+  color: #fff;
+}
+
+.image-preview {
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+}
+
+.user-edit-btn {
+  width: 80%;
+  margin: auto;
 }

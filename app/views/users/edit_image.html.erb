@@ -2,15 +2,17 @@
 <div class="form-wrapper">
   <%= form_with model: @user, url: add_image_user_path do |f| %>
     <label class="image-item">
-      <div class="">
-        <div class="">
           <img id="preview" class="image">
-        </div>
-      </div>
       <div class="select">
         <%= f.file_field :profile_image,id: "myImage", onchange: "setImage(this);", onclick: "this.value = '';",class: "input, hide-input" %>
       </div>
     </label>
+      <p class="image-note">アイコンを追加してください</p>
+    <div class="cp_iptxt">
+      <label class="ef">
+        <%= f.text_field :faculty, class: "input input-faculity-field" , placeholder: "学部を入力してください。" %>
+      </label>
+    </div>
     <div class="button-panel">
       <%= f.submit "確定", class: "button" %>
     </div>
@@ -33,6 +35,9 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 /* body */
+.image-note{
+  text-align: center;
+}
 .image-item{
   display: block;
   position: relative;
@@ -43,9 +48,7 @@
   background: url(<%= asset_path 'img/add_photo.svg' %>) center center / cover no-repeat;
   cursor: pointer;
 }
-.image-item:hover{
 
-}
 .image-item::before{
   position: absolute;
   content: "+ タップして追加";

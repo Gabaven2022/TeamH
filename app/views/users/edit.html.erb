@@ -13,42 +13,39 @@
   </div>
   <% end %>
 
-<main>
+<main class="main-middle">
   <%= form_for @user do |f| %>
     <div class="description">アカウントの写真を添付して下さい！</div>
 
-    <div class="AccountPicture">
-      <div class="LeftPosition">
-        <div class="AddFile button1 border-none", style="border:none;">
-          <label class="AddFileButton">
-            <div class="select">
-              <%= f.file_field :profile_image,id: "myImage", onchange: "setImage(this);", onclick: "this.value = '';",class: "input, hide-input" %>写真を選択
-            </div>
-          </label>
-        </div>
+    <label class="image-item user">
+      <% if @user.profile_image? %>
+        <%= image_tag @user.profile_image.url, class: "image-preview", id: "preview" %>
+        <% else %>
+          <img id="preview" class="image-preview">
+        <% end %>
+      <div class="select">
+        <%= f.file_field :profile_image,id: "myImage", onchange: "setImage(this);", onclick: "this.value = '';",class: "input, hide-input" %>
       </div>
-
-
-      <div class="RemodelPosition">
-        <div class="remodel">
-          <img id="preview">
-        </div>
-      </div>
-    </div>
+    </label>
 
     <div class="cp_iptxt">
+      <p>学部</p>
       <label class="ef">
         <%= f.text_field :faculty, class: "input input-faculity-field" , placeholder: "学部を入力してください。" %>
       </label>
     </div>
 
     <div class="cp_iptxt">
+      <p>名前</p>
       <label class="ef">
         <%= f.text_field :username, class: "input input-faculity-field" , placeholder: "氏名を入力してください。" %>
       </label>
     </div>
 
-    <div class="AddFile button2">
+    <div class="AddFile button3 user-edit-btn">
+      <label class="AddFileButton button3" style="margin-right:10px;">
+        <input type="button" onClick="history.back()">キャンセル
+      </label>
       <label class="AddFileButton button3">
         <%= f.submit %>確定
       </label>

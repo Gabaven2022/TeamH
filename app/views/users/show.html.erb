@@ -20,13 +20,20 @@
       </div>
     </div>
   </div>
-
-  <div class="Points description">
-    <div>現在の保有ポイント数</div>
-    <div class="PossessPoints">
-      <%= @user.point %>P
+  <div class="point-wrapper">
+    <div class="Points description">
+      <div>現在の保有ポイント数</div>
+      <div class="PossessPoints">
+        <%= @user.point %>P
+      </div>
+      <%= link_to user_point_user_path(current_user) do%>
+      <div class="point-buy">
+      +
+      </div>
+      <% end %>
     </div>
   </div>
+
 
 
 

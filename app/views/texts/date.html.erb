@@ -2,7 +2,7 @@
 
     <div class="description attention">受け取る場所：佐賀大学図書館前広場</div>
 
-        <%= form_with model: @text_date, url: place_create_text_path, method: :post,local: 'false' do |f| %>
+        <%= form_with model: @text_date, url: date_create_text_path(@text_date), method: :post,local: 'false' do |f| %>
 
         <div class="candidates">
 
@@ -30,7 +30,6 @@
         <div class="description">
             教科書を受け取りたい３つの希望日時を記入して送信してください。日程調整を行います。
         </div>
-        <%= f.hidden_field :text_id, :value=> @text_id %>
         <div class="AddFile">
             <label class="AddFileButton">
                 <%= f.submit %>確定

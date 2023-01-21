@@ -1,58 +1,101 @@
-<% if @post.errors.any? %>
-  <div class="notification is-danger">
-    <h2>
-      <%= pluralize(@post.errors.count, "error" ) %> prohibited this object from being saved: not successfully
-    </h2>
-    <ul>
-      <% @post.errors.full_messages.each do |message| %>
-        <li>
-          <%= message %>
-        </li>
-        <% end %>
-    </ul>
-  </div>
-  <% end %>
+<main>
+  <div class="post-new">
+    <%= form_for @post do |f| %>
 
-
-    <main>
-      <%= form_for @post do |f| %>
-
-        <div class="UpperTab">
-          <div class="AccountPicture-post">
-            <% if current_user.profile_image? %>
-              <%= image_tag current_user.profile_image.url, class: "app-profile-image" %>
-            <%end%>
-          </div>
+    <div class="post-wrapper">
+      <div class="upper">
+        <div class="homeicon">
+        <% if current_user.profile_image? %>
+          <%= image_tag current_user.profile_image.url, class: "app-profile-image" %>
+        <%end%>
         </div>
+        <div class="name user-name">
+          <%= current_user.username%>
+        </div>
+      </div>
+      <label class="post-image">
+            <img id="preview" class="image">
+        <div class="select">
+          <%= f.file_field :image,id: "myImage", onchange: "setImage(this);", onclick: "this.value = '';",class: "input, hide-input" %>
+        </div>
+      </label>
+      <%= f.hidden_field :image_cache, class: "input" %>
+      <div class="cp_iptxt">
+          <%= f.text_area :body, rows:'9',placeholder: '投稿する内容を打ってください！' %>
+      </div>
 
-        <div class="cp_iptxt">
-          <%= f.label :body, class: 'ef' %>
-            <%= f.text_area :body, rows:'9',placeholder: '投稿する内容を打ってください！' %>
+      <div class="post-btn-new-wrapper">
+        <div class="AddFile CancelPlace">
+          <label class="AddFileButton cancel">
+            <input type="button" onClick="history.back()">キャンセル
           </label>
         </div>
-
-          <div class="files">
-            <div>
-              <label class="AddFile AddFileButton picture" accept="image/*">
-              "写真を選択"
-              <%= f.file_field :image, class: "input" %>
-              <%= f.hidden_field :image_cache, class: "input" %>
-              </label>
-            </div>
-          </div>
-        <div style="display:flex;width:50%; margin:auto">
-          <div class="AddFile ToukouPlace">
-            <label class="AddFileButton toukou">
-            <%= f.submit '投稿' , class: "button is-success" %>
-            "投稿"
-            </label>
-          </div>
-          <div class="AddFile CancelPlace">
-            <label class="AddFileButton cancel">
-              <input type="button" onClick="history.back()">キャンセル
-            </label>
-          </div>
+        <div class="AddFile ToukouPlace">
+          <label class="AddFileButton toukou">
+            <%= f.submit %>投稿
+          </label>
         </div>
-            <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
+</main>
 
-    </main>
+<script>
+  function setImage(target) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+          document.getElementById("preview").setAttribute('src', e.target.result);
+      }
+      reader.readAsDataURL(target.files[0]);
+  };
+</script>
+
+<style>
+.post-new{
+  text-align: center;
+}
+.post-wrapper{
+  margin: 30px auto;
+  width: 100vw;
+  max-width: 600px;
+  box-shadow: 0 0 0 4px rgb(147 147 147);
+}
+.post-btn-new-wrapper{
+  display: flex;
+  width: 400px;
+  margin: auto;
+  padding-bottom: 30px;
+}
+
+.post-top{
+  height: 55px;
+  display: flex;
+}
+.post-image{
+  display: block;
+  position: relative;
+  text-align: center;
+  height: 200px;
+  width: 200px;
+  box-shadow: 0px 0px 0px 2px rgb(86 80 80 / 60%);
+  background: url(<%= asset_path 'img/add_photo.svg' %>) center center / cover no-repeat;
+  cursor: pointer;
+  margin: 10px auto;
+}
+.post-image::before{
+  position: absolute;
+  content: "+ タップして追加";
+  bottom: 0;
+  right: 24px;
+  border-radius: 10px;
+  padding: 0px 18px;
+  background: #7c7c7c;
+  color: #fff;
+}
+.post-image img{
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+</style>

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     member do
       get :follows, :followers
       get 'edit_image'
+      get 'user_point'
       patch 'add_image'
     end
     resource :relationships, only: [:create, :destroy]
@@ -19,10 +20,11 @@ Rails.application.routes.draw do
   resources :comments
   resources :texts do
     member do
-      get 'place'
+      get 'date'
       get 'text_index'
       get 'text_buy'
-      post 'place_create'
+      get 'confirm'
+      post 'date_create'
     end
     collection do
       get :home

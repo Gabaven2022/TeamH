@@ -3,17 +3,8 @@ class ApplicationController < ActionController::Base
 
   protected
 
-
-  def after_sign_up_path_for(resource)
-    edit_image_user_path(current_user.id)
-  end
-
-  def after_inactive_sign_up_path_for(resource)
-    edit_image_user_path(current_user.id)
-  end
-
   def after_sign_in_path_for(resource)
-    super(resource)
+    user_path(current_user)
   end
 
   def configure_permitted_parameters

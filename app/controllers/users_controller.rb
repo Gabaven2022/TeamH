@@ -36,6 +36,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def user_point
+    @user = User.find(params[:id])
+    if @user = current_user
+      @user.increment(:point, 500)
+      @user.save
+      redirect_to user_path(current_user), notice: "500p 購入しました"
+    else
+      redirect_to user_path(current_user)
+    end
+  end
+
   def follows
     user = User.find(params[:id])
     @users = user.following_user.page(params[:page]).per(3).reverse_order
@@ -51,6 +62,6 @@ class UsersController < ApplicationController
     params.require(:user).permit(:username, :faculty, :profile_image)
   end
   def profile_image_params
-    params.require(:user).permit(:profile_image)
+    params.require(:user).permit(:profile_image, :faculty)
   end
 end

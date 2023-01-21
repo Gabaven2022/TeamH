@@ -27,10 +27,8 @@ class TextsController < ApplicationController
   def show
     @text = Text.find(params[:id])
   end
-
-  def place
-    @text_date = TextDate.new
-    @text_id = params[:id]
+  def confirm
+    @text = Text.find(params[:id])
   end
 
   def text_buy
@@ -39,21 +37,34 @@ class TextsController < ApplicationController
       @buy = TextDate.create(buyer_id: current_user.id, user_id: @text.user_id, text_id: params[:id])
       if @buy.save
         @text.update(state: 1)
-        redirect_to place_text_path(@text)
+        @user = User.find(current_user.id)
+        @user.increment(:point, -1000)
+        @user.save
+        redirect_to date_text_path(@text), notice: "1000pで購入しました❕"
       else
         redirect_to text_path(params[:id])
       end
+    elsif @text.state==1 && @text.text_date.buyer_id == current_user.id
+      redirect_to date_text_path(@text)
     else
-      redirect_to text_path(params[:id])
+      redirect_to text_path(params[:id]), alert: "失敗"
     end
   end
 
-  def place_create
-    @text_date = TextDate.new(text_date_params)
-    if @text_date.save
-      redirect_to texts_path, notice: "投稿完了"
+  def date
+    @text_date = TextDate.find_by(text_id: params[:id])
+    if @text_date.buyer_id != current_user.id
+      redirect_to text_path, alert: "失敗"
+    end
+  end
+
+
+  def date_create
+    @text_date = TextDate.find(params[:id])
+    if @text_date.update(text_date_params)
+      redirect_to texts_path, notice: "完了"
     else
-      redirect_to place_text_path, notice: "失敗"
+      redirect_to date_text_path, alert: "失敗"
     end
   end
 
@@ -64,6 +75,6 @@ class TextsController < ApplicationController
     params.require(:text).permit(:text_name, :faculty, :body, :text_image).merge(user_id: current_user.id)
   end
   def text_date_params
-    params.require(:text_date).permit(:date1, :date2, :date3, :text_id).merge(user_id: current_user.id)
+    params.require(:text_date).permit(:date1, :date2, :date3)
   end
 end

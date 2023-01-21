@@ -21,7 +21,7 @@
 
           <div class="AddFileForCancel CancelPlace">
             <label class="AddFileButton cancel">
-                <input type="button" onClick="history.back()">キャンセル
+                <input type="button" onClick="history.back()">投稿キャンセル
             </label>
           </div>
             
@@ -46,13 +46,13 @@
 
           <div class="files" style="display:flex; justify-content:space-between;">
              <label class="AddFile AddFileButton picture" accept="image/*">
-              "写真を選択"
+              写真を選択
               <%= f.file_field :image, class: "input" %>
               <%= f.hidden_field :image_cache, class: "input" %>
             </label>
 
             <label class="AddFileButton AddFile ToukouPlace toukou">
-              <%= f.submit '投稿' , class: "button is-success" %>"投稿"
+              <%= f.submit '投稿' , class: "button is-success" %>投稿
             </label>
 
           

@@ -6,7 +6,7 @@
       <div class="pictures">
         <div class="text-list">
         <% @texts.each do |text| %>
-          <div class="<%= "pointer-none" if text.state == 1 %> text-container ">
+          <div class="text-container">
             <%= link_to text_path(text) do %>
                 <ul class="text-image-container">
                 <%= image_tag text.text_image.url, class: "text-image" %>
@@ -15,6 +15,7 @@
                 <%= text.text_name%>
             </div>
               <% end %>
+
           </div>
             <% end %>
         </div>

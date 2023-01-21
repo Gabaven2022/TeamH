@@ -1,0 +1,1187 @@
+/*
+ * require_tree .
+ *= require_self
+ */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.TopTab {
+  z-index: 100;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+
+.box {
+  height: 4rem;
+  width: 50%;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  color: rgb(106, 6, 6);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  background: white;
+  border-top: solid 10px rgb(106, 6, 6);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+
+.box a {
+  display: block;
+  width: 50%;
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+
+a {
+  flex: 1;
+}
+
+main {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.memo {
+  text-align: center;
+
+}
+
+.tweet {
+  position: sticky;
+  bottom: 6rem;
+  right: 2rem;
+  margin-left: auto;
+  z-index: 10000;
+  width: 5rem;
+  height: auto;
+}
+
+@media screen and (max-width:480px) {
+  .tweet {
+    position: fixed;
+    bottom: 6rem;
+    right: 2rem;
+    z-index: 10000;
+    width: 5rem;
+    height: auto;
+  }
+}
+
+img.tweet {
+  width: 5rem;
+  height: 5rem;
+}
+
+.underTab {
+  display: flex;
+  height: 4rem;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-top: solid 4px black;
+  padding-top: 5px;
+  background-color: white;
+}
+
+.underTab a img {
+  display: block;
+  margin: auto;
+}
+
+
+img {
+  border-top-color: rgba(208, 34, 34, 0.76);
+  height: 100%;
+  background-color: transparent;
+}
+
+.koukoku {
+  height: 130px;
+  text-align: center;
+}
+
+.description {
+  text-align: center;
+  margin: 1rem;
+  color: rgb(106, 6, 6);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+}
+
+.UpperTab {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem;
+}
+
+
+.files {
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+.AddFile {
+  width: 100%;
+  border: 3px solid #ffffff;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.CancelPlace {
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+
+.AddFileButton {
+
+  width: 9rem;
+  height: 2rem;
+  color: #ffffff;
+  background-color: rgb(106, 6, 6);
+  border-radius: 100vh;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  text-shadow: 2px 2px 1px black;
+}
+
+
+
+
+
+input[type="submit"] {
+  display: none;
+}
+
+input[type="button"] {
+  display: none;
+}
+
+.cp_iptxt textarea {
+  font: 15px/24px sans-serif;
+  box-sizing: border-box;
+  margin: 0.5rem;
+  width: 100%;
+  padding: 0.3em;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  color: black;
+  border: 2px solid #1b2538;
+  background: transparent;
+}
+
+.ef textarea:focus {
+  border: 2px solid rgb(106, 6, 6);
+  outline: none;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.toukou {
+  margin: 1rem;
+  max-width: 800px;
+  min-height: 80%;
+  margin: auto;
+}
+
+.cancel {
+  margin: 2rem;
+}
+
+
+.pictures {}
+
+.AccountPicture {
+  box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
+}
+
+.description {
+  margin: 2rem;
+}
+
+.SearchBox {
+  display: flex;
+  justify-content: center;
+  margin: 4rem;
+}
+
+.search_container {
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid #999;
+  padding: 3px 10px;
+  border-radius: 20px;
+  height: 2.3em;
+  width: 30rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.search_container input[type="text"] {
+  border: none;
+  height: 2.0em;
+}
+
+.search_container input[type="text"]:focus {
+  outline: 0;
+}
+
+.search_container input[type="submit"] {
+  cursor: pointer;
+  font-family: FontAwesome;
+  font-size: 1.3em;
+  border: none;
+  background: none;
+  color: #3879D9;
+  position: absolute;
+  width: 2.5em;
+  height: 2.5em;
+  right: 0;
+  top: -10px;
+  outline: none;
+}
+
+.NoticeBox {
+  height: 4rem;
+  display: flex;
+  padding: 0.5em 1em;
+  margin: 2em;
+  color: rgb(106, 6, 6);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  background: white;
+  border-top: solid 10px rgb(106, 6, 6);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+
+}
+
+.box a {
+  display: block;
+  width: 50%;
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+
+}
+
+a {
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+}
+
+.fundamentals {
+  padding: 0.5rem;
+  display: flex;
+}
+
+.left,
+.right {
+  display: flex;
+  justify-content: center;
+}
+
+.left {
+  flex: 1;
+}
+
+.right {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.AccountPicture-post {
+  height: 10rem;
+  width: 10rem;
+  box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
+  ;
+  margin-right: 0.5rem;
+}
+
+.FacutyAndName {
+  display: flex;
+  flex-direction: column;
+}
+
+.Faculty,
+.Name {
+  box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
+  ;
+  padding: 5px;
+}
+
+.Points {
+  margin-top: 1rem;
+
+}
+
+.PossessPoints {
+  margin: 0.5rem;
+}
+
+
+.float3 {
+  position: relative;
+  border-radius: 100vh;
+  color: #fff;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 1px rgba(255, 255, 255, 0.445);
+  background: rgb(106, 6, 6);
+  top: 0;
+  padding: 10px 20px;
+  margin: 2rem;
+  display: inline-block;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  outline: none;
+  /*アニメーションの設定*/
+  transition: all .3s;
+}
+
+/*hoverをしたらボックスに影がつき、上に上がる*/
+.float3:hover {
+  top: -3px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.ToChange {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 0;
+}
+
+.AccountPicture {
+  display: flex;
+  padding: 0;
+  height: 15rem;
+}
+
+
+
+.AddFile {
+  border: 3px solid #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 0rem;
+}
+
+.button1 {
+  height: 5rem;
+  width: 10rem;
+}
+
+.button2 {
+  height: 100%;
+}
+
+.button3 {
+  width: 80%;
+  height: 3rem;
+}
+
+
+.LeftPosition {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 2;
+  padding: 0;
+}
+
+.AddFileButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0rem;
+  padding: 0.3rem 0.5rem;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: rgb(106, 6, 6);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 10vh;
+  cursor: pointer;
+}
+
+.RemodelPosition {
+  flex: 3;
+  display: flex;
+  box-shadow: 1px 1px 1px 1px rgba(86, 80, 80, 0.6);
+
+}
+
+.remodel {
+  width: 15rem;
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.remodel img {
+  max-width: 80vh;
+  max-height: 170px;
+  margin-bottom: 10px;
+}
+
+
+input[type="file"] {
+  display: none;
+}
+
+
+input[type="submit"] {
+  display: none;
+}
+
+.cp_iptxt {
+  position: relative;
+  margin: 3rem;
+}
+
+.cp_iptxt input[type='text'] {
+  font: 15px/24px sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.3em;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  color: black;
+  border: none;
+  border-bottom: 2px solid #1b2538;
+  background: transparent;
+}
+
+.ef input[type='text']:focus {
+  border-bottom: 2px solid rgb(106, 6, 6);
+  outline: none;
+}
+
+.peofile-image {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* KeizibanHome */
+.upper {
+  display: flex;
+  height: 55px;
+  box-shadow: 1px 1px 1px 1px rgba(176, 170, 170, 0.6);
+}
+
+.homeicon img {
+  width: 50px;
+  height: 50px;
+
+}
+
+.name {
+  padding: 15px;
+}
+
+.center {
+  text-align: center;
+}
+
+.upload {
+  box-shadow: 1px 1px 1px 1px rgba(176, 170, 170, 0.6);
+  padding: 1rem;
+}
+
+.upload img {
+  width: 200px;
+}
+
+.under {
+  box-shadow: 1px 1px 1px 1px rgba(176, 170, 170, 0.6);
+  margin-bottom: 60px;
+}
+
+.bunnsyou {
+  padding: 1px 1rem;
+  font-size: 15px;
+  box-shadow: 1px 1px 1px 1px rgba(176, 170, 170, 0.6);
+  background-color: #dcdcdc45;
+}
+
+.heart img {
+  width: 30px;
+}
+
+.heart {
+  box-shadow: 1px 1px 1px 1px rgba(176, 170, 170, 0.6);
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+}
+
+.post-time {
+  text-align: center;
+  font-family: system-ui;
+  color: #9b9b9b;
+  margin: auto 10px auto auto;
+}
+
+.comment-time {
+  text-align: center;
+  font-family: system-ui;
+  color: #9b9b9b;
+  margin: auto 10px auto auto;
+  font-size: 13px;
+}
+
+.toggleButton {
+  flex: 1;
+  display: flex;
+}
+
+.toggleButton.down:before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-bottom: 2px solid #000;
+  border-right: 2px solid #000;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 15px;
+}
+
+.toggle-comment {
+  display: none;
+  text-align: center;
+  padding: 1rem;
+}
+
+.comment-btn {
+  width: 4rem;
+  height: 1.5rem;
+  color: #ffffff;
+  background-color: #5753ff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  text-shadow: 2px 2px 1px black;
+}
+
+.comment-frame {
+  box-shadow: 1px 1px 1px 1px rgba(176, 170, 170, 0.6);
+  padding: 0.3rem 0.3rem 0.3rem 2.7rem;
+  display: flex;
+  align-items: center;
+}
+
+.comment-text {
+  padding: 1px 1rem;
+  font-size: 15px;
+}
+
+.comment-img {
+  width: 40px;
+  height: 40px;
+}
+
+.user-name {
+  font-family: cursive;
+  font-weight: bold;
+  color: #5f5f5f;
+  font-style: italic;
+  margin-right: 30px;
+}
+
+.comment-height {
+  margin-bottom: 42px;
+}
+
+.comment-list {
+  margin-bottom: 10px;
+  max-height: 340px;
+}
+
+@media screen and (max-width:480px) {
+  .comment-list {
+    overflow: auto;
+  }
+}
+
+@media screen and (min-width:481px) {
+  .comment-list {
+    overflow: hidden;
+  }
+}
+
+.comment-list::-webkit-scrollbar {
+  overflow: hidden;
+  width: 5px;
+  background: #eee;
+
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.comment-list::-webkit-scrollbar:horizontal {
+  height: 5px;
+}
+
+.comment-list::-webkit-scrollbar-button {
+  display: none;
+}
+
+.comment-list::-webkit-scrollbar-piece {
+  background: #eee;
+}
+
+.comment-list::-webkit-scrollbar-piece:start {
+  background: #eee;
+}
+
+.comment-list::-webkit-scrollbar-thumb {
+  overflow: hidden;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+
+  background: #333;
+}
+
+.comment-list::-webkit-scrollbar-corner {
+  overflow: hidden;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+
+  background: #333;
+}
+
+.on-scroll:hover {
+  overflow: auto;
+}
+
+.comment-create {
+  display: flex;
+}
+
+.comment-under img {
+  height: 2rem;
+  width: 2rem;
+
+}
+
+.comment-form {
+  display: flex;
+  margin: 0 15px 0 auto;
+  justify-content: right;
+}
+
+.comment-form .comment-input {
+  border: none;
+  outline: none;
+  height: 2rem;
+  width: 85%;
+  margin-left: 7px;
+}
+
+
+/* SOLD */
+
+.pagenate-container {
+  position: relative;
+  text-align: center;
+  height: 50px;
+}
+
+.pagination {
+  display: block;
+  position: relative;
+}
+
+.pagination .first {
+  display: none;
+}
+
+.pagination .last {
+  display: none;
+}
+
+.pagination .prev {
+  position: absolute;
+  left: 5%;
+  padding: 5px 10px;
+  background: #fff;
+  border: solid 2px #111;
+  font-size: 14px;
+  color: #111;
+  font-weight: bold;
+  transition: all 0.15s linear;
+}
+
+.pagination .next {
+  position: absolute;
+  right: 5%;
+  background: #fff;
+  border: solid 2px #111;
+  font-size: 14px;
+  color: #111;
+  font-weight: bold;
+  transition: all 0.15s linear;
+}
+
+.pagination .next a {
+  padding: 5px 10px;
+}
+
+.page {
+  margin: 0 5px;
+}
+
+.page {
+  margin: 0 5px;
+}
+
+.page a {
+  padding: 5px 10px;
+  border-radius: 50%;
+  background: #fff;
+  border: solid 2px #111;
+  font-size: 14px;
+  color: #111;
+  font-weight: bold;
+  transition: all 0.15s linear;
+}
+
+.current {
+  padding: 5px 10px;
+  border-radius: 50%;
+  border: solid 2px #111;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.15s linear;
+  background: #111;
+  color: #fff;
+  pointer-events: none;
+}
+
+.text-book-picture {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.ToPurchase {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.AddFile2 {
+  border: 3px solid #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 0rem;
+  height: 7rem;
+}
+
+.LeftPosition {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 2;
+  position: relative;
+}
+
+.AddFile2Button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0rem;
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: rgb(106, 6, 6);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 8vh;
+  cursor: pointer;
+}
+
+
+.button2 {
+  height: 100%;
+}
+
+.button3 {
+  width: 80%;
+  height: 3rem;
+}
+
+
+
+input[type="file"] {
+  display: none;
+}
+
+
+input[type="submit"] {
+  display: none;
+}
+
+
+
+/* ここから学部名プルダウンデザイン */
+/*Page styles*/
+.boxes {
+  margin: auto;
+  padding: 25px;
+  color: rgb(106, 6, 6);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/*Checkboxes styles*/
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]+label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 20px;
+  font: 14px/20px 'Open Sans', Arial, sans-serif;
+  color: black;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+input[type="radio"]+label:last-child {
+  margin-bottom: 0;
+}
+
+input[type="radio"]+label:before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgb(106, 6, 6);
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: .6;
+  -webkit-transition: all .12s, border-color .08s;
+  transition: all .12s, border-color .08s;
+}
+
+input[type="radio"]:checked+label:before {
+  width: 10px;
+  top: -5px;
+  left: 5px;
+  border-radius: 0;
+  opacity: 1;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* 学部名プルダウンデザイン終わり */
+
+
+
+
+
+
+
+
+
+.cp_iptxt {
+  position: relative;
+  margin: 3rem;
+}
+
+.cp_iptxt input[type='text'] {
+  font: 15px/24px sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.3em;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  color: black;
+  border: none;
+  border-bottom: 2px solid #1b2538;
+  background: transparent;
+}
+
+.ef input[type='text']:focus {
+  border-bottom: 2px solid rgb(106, 6, 6);
+  outline: none;
+}
+
+.cp_iptxt textarea {
+  font: 15px/24px sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.3em;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  color: black;
+  border: none;
+  border-bottom: 2px solid #1b2538;
+  background: transparent;
+}
+
+.ef textarea:focus {
+  border-bottom: 2px solid rgb(106, 6, 6);
+  outline: none;
+}
+
+.text-list {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: flex-start;
+}
+
+.text-container {
+  position: relative;
+  border: solid 1px rgb(75, 75, 75);
+}
+
+.text-image {
+  border-bottom: solid 1px rgb(75, 75, 75);
+}
+
+.text-name {
+  text-align: center;
+
+}
+
+@media screen and (max-width:480px) {
+
+  .text-image {
+    height: 120px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .show-text-image {
+    max-height: 100vh;
+    width: 80vw;
+    object-fit: cover;
+  }
+
+  .text-container {
+    width: 30%;
+  }
+}
+
+@media screen and (min-width:481px) {
+  .text-image {
+    height: 200px;
+    width: 170px;
+    object-fit: cover;
+  }
+
+  .text-container {
+    margin: 10px 20px;
+  }
+
+  .show-text-image {
+    max-height: 100vh;
+    max-width: 80%;
+    object-fit: cover;
+  }
+}
+
+.text-book-container {
+  margin: auto;
+  max-width: 600px;
+}
+
+
+
+/* sharing home */
+.float3 {
+  position: relative;
+  border-radius: 100vh;
+  color: #fff;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 1px rgba(255, 255, 255, 0.445);
+  background: rgb(106, 6, 6);
+  top: 0;
+  padding: 10px 20px;
+  margin: 2rem;
+  display: inline-block;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  outline: none;
+  /*アニメーションの設定*/
+  transition: all .3s;
+}
+
+/*hoverをしたらボックスに影がつき、上に上がる*/
+.float3:hover {
+  top: -3px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+
+/*========= レイアウトのためのCSS ===============*/
+
+
+.BuyingSelling {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+/* faculty */
+
+/* .koukokuはcommon_cssに移動させたよ！！ */
+
+
+.yohaku {
+  padding: 25px;
+  background-color: white;
+}
+
+.font {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+
+}
+
+.kyouiku {
+  display: table;
+  width: 100%;
+  height: 70px;
+
+}
+
+.tideza {
+  display: table;
+  width: 100%;
+  height: 70px;
+}
+
+.keizai {
+  display: table;
+  width: 100%;
+  height: 70px;
+}
+
+.rikou {
+  display: table;
+  width: 100%;
+  height: 70px;
+}
+
+.nougaku {
+  display: table;
+  width: 100%;
+  height: 70px;
+}
+
+
+.button019 a {
+  background: rgb(106, 6, 6);
+  text-decoration: none;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  border-radius: 3px;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 280px;
+  padding: 10px 25px;
+  color: white;
+  transition: 0.3s ease-in-out;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.button019 a:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  right: 2rem;
+  font-size: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: right 0.3s;
+  width: 6px;
+  height: 6px;
+  border-top: solid 2px currentColor;
+  border-right: solid 2px currentColor;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.button019 a:hover {
+  background: rgb(106, 6, 6);
+  color: white;
+}
+
+.button019 a:hover:after {
+  right: 1.4rem;
+}
+
+.pointer-none {
+  pointer-events: none;
+}
+
+.pointer-none::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+}
+
+.pointer-none::after {
+  width: 100%;
+  height: 100%;
+  content: "販売済み";
+  color: white;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+}

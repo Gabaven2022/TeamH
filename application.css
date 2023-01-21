@@ -133,6 +133,7 @@ img {
 
 .TweetUpper {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -159,7 +160,6 @@ img {
 }
 
 .AddFileForCancel {
-  width: 100%;
   border: 3px solid #ffffff;
   display: flex;
   margin: 2rem;

@@ -34,20 +34,21 @@ class TextsController < ApplicationController
   def text_buy
     @text = Text.find(params[:id])
     if @text.state != 1
-      @buy = TextDate.create(buyer_id: current_user.id, user_id: @text.user_id, text_id: params[:id])
-      if @buy.save
-        @text.update(state: 1)
-        @user = User.find(current_user.id)
-        @user.increment(:point, -1000)
-        @user.save
-        redirect_to date_text_path(@text), notice: "1000pで購入しました❕"
+      @buy = TextDate.new(buyer_id: current_user.id, user_id: @text.user_id, text_id: params[:id])
+      @user = User.find(current_user.id)
+      @user.increment(:point, -1000)
+      if @user.point < 0
+        redirect_to confirm_text_path(@text), alert: "#{@user.point.abs}ポイント足りません"
       else
-        redirect_to text_path(params[:id])
+          @user.save
+          @buy.save
+          @text.update(state: 1)
+          redirect_to date_text_path(@text), notice: "✨1000pで購入しました❕✨"
       end
     elsif @text.state==1 && @text.text_date.buyer_id == current_user.id
       redirect_to date_text_path(@text)
     else
-      redirect_to text_path(params[:id]), alert: "失敗"
+      redirect_to text_path(params[:id]), alert: "他の人が購入済みです"
     end
   end
 
@@ -56,6 +57,12 @@ class TextsController < ApplicationController
     if @text_date.buyer_id != current_user.id
       redirect_to text_path, alert: "失敗"
     end
+  end
+
+  def date_destroy
+    TextDate.delete_all
+    Text.all.update(state: 0)
+    redirect_to text_path
   end
 
 

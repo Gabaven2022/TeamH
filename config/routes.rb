@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     end
     resource :relationships, only: [:create, :destroy]
   end
-  root to: "posts#index"
+  root to: "texts#home"
   resources :posts do
     resources :likes
   end
@@ -25,6 +25,7 @@ Rails.application.routes.draw do
       get 'text_buy'
       get 'confirm'
       post 'date_create'
+      delete 'date_destroy'
     end
     collection do
       get :home

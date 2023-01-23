@@ -23,32 +23,34 @@
 <body>
   <nav class="TopTab">
     <ul class="box 11">
-      <%= link_to '掲示板' , posts_path %>
+      <%= link_to '佐大ニュース' , posts_path %>
     </ul>
     <ul class="box 12">
       <%= link_to '教科書シェアリング', home_texts_path %>
     </ul>
   </nav>
-<div class="notification-wrapper">
   <% if flash[:notice] %>
+  <div class="notification-wrapper">
     <div class="notification is-info">
       <div class="notice">
         <%= notice %>
       </div>
     </div>
-    <% end %>
-      <% if flash[:alert] %>
-        <div class="notification is-danger">
-          <div class="alert">
-            <%= alert %>
-          </div>
-        </div>
-        <% end %>
-</div>
+  </div>
+  <% end %>
+  <% if flash[:alert] %>
+  <div class="notification-wrapper">
+    <div class="notification is-danger">
+      <div class="alert">
+        <%= alert %>
+      </div>
+    </div>
+  </div>
+  <% end %>
   <%= yield %>
 
     <ul class="underTab">
-      <%= link_to posts_path do %>
+      <%= link_to root_path do %>
         <%= image_tag 'img/home.png' , alt: 'home' %>
           <% end %>
             <a href="KeijibanSearch.html">

@@ -17,7 +17,19 @@
     </div>
 
     <ul class="ToPurchase">
+      <% if @text.state==0 %>
         <%= link_to '購入手続きへ', confirm_text_path(@text), class: "float3 botton" %>
+
+      <% else @text.state==1 %>
+          <% if @text.text_date.buyer_id==current_user.id %>
+            <%= link_to '日程調整', text_buy_text_path(@text), class: "float3 botton" %>
+          <% else %>
+            <label class="AddFileButton cancel">
+              <input type="button" onClick="history.back()" class="float3 botton">購入済みです
+            </label>
+          <% end %>
+      <% end %>
+      <%= link_to "削除", date_destroy_text_path, method: "delete" %>
     </ul>
   </div>
 </main>

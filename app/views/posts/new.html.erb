@@ -63,7 +63,7 @@
 }
 .post-btn-new-wrapper{
   display: flex;
-  width: 400px;
+  max-width: 400px;
   margin: auto;
   padding-bottom: 30px;
 }
@@ -97,5 +97,10 @@
   height: 200px;
   width: 200px;
   object-fit: cover;
+}
+@media screen and (max-width:620px) {
+  .post-wrapper {
+    width: 90vw;
+  }
 }
 </style>

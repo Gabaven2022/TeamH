@@ -32,4 +32,5 @@ Rails.application.routes.draw do
       get :faculty
     end
   end
+  resources :notifications
 end

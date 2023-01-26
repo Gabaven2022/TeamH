@@ -1,5 +1,7 @@
 <main>
-    <div class="koukoku">広告</div>
+    <div class="koukoku">
+        <%= image_tag 'img/advertisement.png' , alt: 'home' %>
+    </div>
     <!-- <div class="yohaku"></div> -->
       <div class="kyouiku"><div class="font">
           <div class="button019"><%= link_to '教育学部', text_index_text_path(1), class: "float3 botton" %>
@@ -16,3 +18,10 @@
           <div class="button019"><%= link_to '全て', texts_path, class: "float3 botton" %>
           </div></div></div>
   </main>
+
+<style>
+.koukoku{
+    width: 100%;
+    text-align: center;
+}
+</style>

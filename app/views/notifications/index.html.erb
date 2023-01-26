@@ -1,0 +1,55 @@
+<main>
+    <div class="koukoku">
+        <%= image_tag 'img/advertisement.png' , alt: 'home' %>
+    </div>
+
+    <% @texts.each do |text| %>
+    <ul class="NoticeBox">
+        <%= link_to  text_path(text) do %>
+            <div class="NoticeAbout">
+                教科書を買いたい人から日程調整の希望が届きました！
+            </div>
+            <div class="notice-body">
+              <div class="notice-text">
+                  <%= image_tag text.text_image.url, class: "notice-image" %>
+                  <div>教科書名：<%= text.text_name%></div>
+                  <div class="buyer-user">購入者：<%= text.text_date.buyer.username%>さん</div>
+              </div>
+              <div class="date-conteiner">
+                <div>日程①:<%= text.text_date.date1%></div>
+                <div>日程②:<%= text.text_date.date2%></div>
+                <div>日程③:<%= text.text_date.date3%></div>
+
+              </div>
+            </div>
+            <!-- 買い手がシェアリングのWishPlace.htmlを送信したときに売り手に届く -->
+        <% end %>
+    </ul>
+    <% end %>
+    <% @text_dates.each do |date| %>
+
+    <ul class="NoticeBox">
+        <a href="ResponsePlace.html">
+            <div class="NoticeAbout">
+                教科書を売りたい人から日程調整の希望が届きました！
+            </div>
+            <!-- 売り手がシェアリングのResponsePlace.htmlの中で「ない」の項目を送信したときに買い手に届く -->
+        </a>
+    </ul>
+    <% end %>
+
+    <div class="NoticeBox">
+        <div class="NoticeAbout">
+            教科書の受け渡し日が確定しました！
+            <br>
+            ＜ここに買い手と売り手どちらも都合が良い候補を表示＞
+        </div>
+        <!-- 買い手と売り手の日程が合致したら買い手と売り手どちらにも届く -->
+</main>
+
+<style>
+.koukoku{
+    width: 100%;
+    text-align: center;
+}
+</style>
